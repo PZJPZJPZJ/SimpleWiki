@@ -4,7 +4,7 @@ title: Home
 heroImage: https://avatars.githubusercontent.com/u/68857304
 actions:
   - text: Wiki
-    link: /guide/
+    link: /wiki/
     type: primary
 
   - text: Github

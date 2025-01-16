@@ -18,7 +18,11 @@ export default defineUserConfig({
       },
       {
         text: 'Wiki',
-        link: '/guide/',
+        link: '/wiki/',
+      },
+      {
+        text: 'Github',
+        link: 'https://github.com/pzjpzjpzj',
       },
     ],
     sidebarDepth: 5,
