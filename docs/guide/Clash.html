@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.18" />
+    <style>
+      :root {
+        --vp-c-bg: #fff;
+      }
+
+      [data-theme='dark'] {
+        --vp-c-bg: #1b1b1f;
+      }
+
+      html,
+      body {
+        background-color: var(--vp-c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme')
+      const systemDarkMode =
+        'matchMedia' in window
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+          : false
+
+      if (userMode === 'light') {
+        document.documentElement.dataset.theme = 'light'
+      } else if (userMode === 'dark' || systemDarkMode) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Clash:ClashPremium代理核心配置 | PZJ</title><meta name="description" content="A Simple Wiki Site">
+    <link rel="preload" href="/SimpleWiki/assets/style-DA5tIcCL.css" as="style"><link rel="stylesheet" href="/SimpleWiki/assets/style-DA5tIcCL.css">
+    <link rel="modulepreload" href="/SimpleWiki/assets/app-C0b3YH3R.js"><link rel="modulepreload" href="/SimpleWiki/assets/Clash.html-BGOhAF5N.js">
+    <link rel="prefetch" href="/SimpleWiki/assets/index.html-DNsXBmiX.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Adobe.html-C_BK1_F5.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/AIDA64.html-ba4Oo--z.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Alist.html-CSG2__jD.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/AMD.html-BODUxzAY.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Analiti.html-CBvJ1OC-.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Android Debug Bridge.html-DCry2YFW.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Aria2.html-CNS50zGL.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/AS SSD Benchmark.html-Um_dieI1.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/BalenaEtcher.html-DzOFTq-m.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Bandizip.html-EsRjVDu9.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/BeatSaber.html-WA4UjMhS.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Bluetooth Peripherals.html-eRJutgsm.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Bootice.html-rA96e03-.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Bootmgr.html-Dq1AabHZ.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/CHK Hash Tool.html-DoAvI9WU.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Chrome.html-CefnwuxU.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Cinebench.html-CuofETwv.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/ComfyUI.html-D8kYO85I.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/ContextMenuManager.html-gFETYtks.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/CrystalDiskInfo.html-B4oY4w3f.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/CrystalDiskMark.html-C4TcvCzb.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/DiskGenius.html-wAg_Jk9J.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Dism.html-BbrNiHhR.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/DmitriRender.html-DuUSjkgn.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Docker.html-DZRfH-rQ.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/DroidCam.html-ChHS6pdT.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Duplicate Cleaner.html-l9K5ZmmM.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Duplicati.html-DD2HIV9e.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Emotn.html-BmbXVzD6.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Epic.html-CsQMRR-i.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Everything.html-BYa1aOrO.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Git.html-CF4CvRp2.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/HomeAssistant.html-BeQgorH8.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Immich.html-BTMPvAZI.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/JaNetfilter.html-Bd5HxHGy.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/JetBrains.html-BjRzyHqz.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/John the Ripper.html-CIqSg3C9.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/LibChecker.html-DlGuQfDU.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Linux.html-Bn2AveG8.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Lucky.html-BqwvBMQQ.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Magisk.html-DB8yDGHZ.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Microsoft Activation Scripts.html-BFu7Qb2v.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Mihomo.html-CIH71jte.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Minecraft.html-qryGTSWG.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/MySQL.html-z0ZEWBEq.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/NatTypeTester.html-xK7XmCcX.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/NextTrace.html-CBg5nUf3.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/nRF Connect.html-DkTW9M35.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/NSSM.html-Cl9n8Kwr.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/NVIDIA.html-CkcpTcyK.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/OBS Studio.html-Clvqcage.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/OllyDbg.html-BLniH_3V.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/OpenCore.html-DJBjGQO4.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/OpenEUICC.html-0NNhJm_W.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/OpenMediaVault.html-DbqEX50E.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/OpenWrt.html-DMXbhDI4.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Parsec Virtual Display.html-BRE9UK-z.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/PDF Patcher.html-DmRyHiNw.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/PotPlayer.html-BOlmSszA.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/PSP Infinity.html-CG7KA6G7.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/qBittorrent.html-CdZVOFJC.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Redpill Recovery.html-BP5Pufle.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/RustScan.html-CufZjKvn.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/SFX Builder.html-DwchgsLp.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/SoVITS.html-DcrXMHyM.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Stable Diffusion.html-CyZFsP8n.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/StarWind Converter.html-D8utvLg8.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Steam.html-Cj5GdrF7.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Sunshine.html-CeCsTrXO.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/TVBox.html-BGXwxm3c.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Ultimate Vocal Remover.html-7DQ3UJ6w.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Unity.html-C83BJCbE.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Unlock Music.html-CXTIYmoH.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Unreal Engine.html-Zo5k-dPa.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/VMware.html-tM6bSitP.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/VuePress.html-D2nA4svW.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/WePE.html-CFhU421t.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Windows.html-BczXCye3.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/WordPress.html-CZEMhoqS.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/XMind.html-BOMsy501.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Xray UI.html-BSlvijBF.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/Yuzu.html-BU2371No.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/404.html-XNpodBjm.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/index.html-DbW66hVT.js" as="script"><link rel="prefetch" href="/SimpleWiki/assets/setupDevtools-7MC2TMWH-Bqluc_yX.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="vp-theme-container external-link-icon" vp-container><!--[--><header class="vp-navbar" vp-navbar><div class="vp-toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/SimpleWiki/"><img class="vp-site-logo" src="https://avatars.githubusercontent.com/u/68857304" alt="PZJ"><span class="vp-site-name vp-hide-mobile" aria-hidden="true">PZJ</span></a></span><div class="vp-navbar-items-wrapper" style=""><!--[--><!--]--><nav class="vp-navbar-items vp-hide-mobile" aria-label="site navigation"><!--[--><div class="vp-navbar-item"><a class="route-link auto-link" href="/SimpleWiki/" aria-label="Home"><!---->Home<!----></a></div><div class="vp-navbar-item"><a class="route-link route-link-active auto-link" href="/SimpleWiki/guide/" aria-label="Wiki"><!---->Wiki<!----></a></div><!--]--></nav><!--[--><!--]--><button type="button" class="vp-toggle-color-mode-button" title="toggle color mode"><svg class="light-icon" viewbox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="dark-icon" viewbox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="vp-sidebar-mask"></div><!--[--><aside class="vp-sidebar" vp-sidebar><nav class="vp-navbar-items" aria-label="site navigation"><!--[--><div class="vp-navbar-item"><a class="route-link auto-link" href="/SimpleWiki/" aria-label="Home"><!---->Home<!----></a></div><div class="vp-navbar-item"><a class="route-link route-link-active auto-link" href="/SimpleWiki/guide/" aria-label="Wiki"><!---->Wiki<!----></a></div><!--]--></nav><!--[--><!--]--><ul class="vp-sidebar-items"><!--[--><li><p tabindex="0" class="vp-sidebar-item vp-sidebar-heading">Clash:ClashPremium代理核心配置 <!----></p><!----></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="vp-page"><!--[--><!--]--><div class="theme-default-content" vp-content><!--[--><!--]--><div><h1 id="clash-clashpremium代理核心配置" tabindex="-1"><a class="header-anchor" href="#clash-clashpremium代理核心配置"><span>Clash:ClashPremium代理核心配置</span></a></h1><h2 id="dockercli" tabindex="-1"><a class="header-anchor" href="#dockercli"><span>DockerCLI</span></a></h2><div class="language-bash line-numbers-mode" data-highlighter="prismjs" data-ext="sh" data-title="sh"><pre><code><span class="line"><span class="token function">docker</span> run <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> clash <span class="token parameter variable">--restart</span><span class="token operator">=</span>always <span class="token parameter variable">--net</span><span class="token operator">=</span>host dreamacro/clash-premium</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><h2 id="配置文件地址" tabindex="-1"><a class="header-anchor" href="#配置文件地址"><span>配置文件地址</span></a></h2><h3 id="windows" tabindex="-1"><a class="header-anchor" href="#windows"><span>Windows</span></a></h3><p><code>C:\Users\Admin\.config\clash\config.yaml</code></p><h3 id="linux" tabindex="-1"><a class="header-anchor" href="#linux"><span>Linux</span></a></h3><p><code>Linux：/root/.config/clash/config.yaml</code></p><h2 id="配置文件示例" tabindex="-1"><a class="header-anchor" href="#配置文件示例"><span>配置文件示例</span></a></h2><div class="language-yaml line-numbers-mode" data-highlighter="prismjs" data-ext="yml" data-title="yml"><pre><code><span class="line"><span class="token comment"># HTTP(S) 代理服务端口</span></span>
+<span class="line"><span class="token comment"># port: 7890</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># SOCKS5 代理服务端口</span></span>
+<span class="line"><span class="token comment"># socks-port: 7891</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># Linux 和 macOS 的透明代理服务端口 (TCP 和 TProxy UDP 重定向)</span></span>
+<span class="line"><span class="token comment"># redir-port: 7892</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># Linux 的透明代理服务端口 (TProxy TCP 和 TProxy UDP)</span></span>
+<span class="line"><span class="token comment"># tproxy-port: 7893</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># HTTP(S) 和 SOCKS4(A)/SOCKS5 代理服务共用一个端口</span></span>
+<span class="line"><span class="token key atrule">mixed-port</span><span class="token punctuation">:</span> <span class="token number">7890</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 本地 SOCKS5/HTTP(S) 代理服务的认证</span></span>
+<span class="line"><span class="token comment"># authentication:</span></span>
+<span class="line"><span class="token comment">#  - &quot;user1:pass1&quot;</span></span>
+<span class="line"><span class="token comment">#  - &quot;user2:pass2&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 设置为 true 以允许来自其他 LAN IP 地址的连接</span></span>
+<span class="line"><span class="token key atrule">allow-lan</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 仅当 `allow-lan` 为 `true` 时有效</span></span>
+<span class="line"><span class="token comment"># &#39;*&#39;: 绑定所有 IP 地址</span></span>
+<span class="line"><span class="token comment"># 192.168.122.11: 绑定单个 IPv4 地址</span></span>
+<span class="line"><span class="token comment"># &quot;[aaaa::a8aa:ff:fe09:57d8]&quot;: 绑定单个 IPv6 地址</span></span>
+<span class="line"><span class="token comment"># bind-address: &#39;*&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># Clash 路由工作模式</span></span>
+<span class="line"><span class="token comment"># rule: 基于规则的数据包路由</span></span>
+<span class="line"><span class="token comment"># global: 所有数据包将被转发到单个节点</span></span>
+<span class="line"><span class="token comment"># direct: 直接将数据包转发到互联网</span></span>
+<span class="line"><span class="token key atrule">mode</span><span class="token punctuation">:</span> rule</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 默认情况下, Clash 将日志打印到 STDOUT</span></span>
+<span class="line"><span class="token comment"># 日志级别: info / warning / error / debug / silent</span></span>
+<span class="line"><span class="token key atrule">log-level</span><span class="token punctuation">:</span> info</span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 当设置为 false 时, 解析器不会将主机名解析为 IPv6 地址</span></span>
+<span class="line"><span class="token key atrule">ipv6</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># RESTful Web API 监听地址</span></span>
+<span class="line"><span class="token key atrule">external-controller</span><span class="token punctuation">:</span> 0.0.0.0<span class="token punctuation">:</span><span class="token number">9090</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 配置目录的相对路径或静态 Web 资源目录的绝对路径. Clash core 将在</span></span>
+<span class="line"><span class="token comment"># `http://{{external-controller}}/ui` 中提供服务.</span></span>
+<span class="line"><span class="token comment"># 解压 clash-yacd-gh-pages.zip 并配置静态文件目录</span></span>
+<span class="line"><span class="token comment"># external-ui: folder</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># RESTful API 密钥 (可选)</span></span>
+<span class="line"><span class="token comment"># 通过指定 HTTP 头 `Authorization: Bearer ${secret}` 进行身份验证</span></span>
+<span class="line"><span class="token comment"># 如果RESTful API在 0.0.0.0 上监听, 务必设置一个 secret 密钥.</span></span>
+<span class="line"><span class="token comment"># secret: &quot;&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 出站接口名称</span></span>
+<span class="line"><span class="token comment"># interface-name: en0</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># fwmark (仅在 Linux 上有效)</span></span>
+<span class="line"><span class="token comment"># routing-mark: 6666</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># 用于DNS服务器和连接建立的静态主机 (如/etc/hosts) .</span></span>
+<span class="line"><span class="token comment">#</span></span>
+<span class="line"><span class="token comment"># 支持通配符主机名 (例如 *.clash.dev, *.foo.*.example.com)</span></span>
+<span class="line"><span class="token comment"># 非通配符域名优先级高于通配符域名</span></span>
+<span class="line"><span class="token comment"># 例如 foo.example.com &gt; *.example.com &gt; .example.com</span></span>
+<span class="line"><span class="token comment"># P.S. +.foo.com 等于 .foo.com 和 foo.com</span></span>
+<span class="line"><span class="token comment"># hosts:</span></span>
+<span class="line">  <span class="token comment"># &#39;*.clash.dev&#39;: 127.0.0.1</span></span>
+<span class="line">  <span class="token comment"># &#39;.dev&#39;: 127.0.0.1</span></span>
+<span class="line">  <span class="token comment"># &#39;alpha.clash.dev&#39;: &#39;::1&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># profile:</span></span>
+<span class="line">  <span class="token comment"># 将 `select` 手动选择 结果存储在 $HOME/.config/clash/.cache 中</span></span>
+<span class="line">  <span class="token comment"># 如果不需要此行为, 请设置为 false</span></span>
+<span class="line">  <span class="token comment"># 当两个不同的配置具有同名的组时, 将共享所选值</span></span>
+<span class="line">  <span class="token comment"># store-selected: true</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># 持久化 fakeip</span></span>
+<span class="line">  <span class="token comment"># store-fake-ip: false</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># DNS 服务设置</span></span>
+<span class="line"><span class="token comment"># 此部分是可选的. 当不存在时, DNS 服务将被禁用.</span></span>
+<span class="line"><span class="token key atrule">dns</span><span class="token punctuation">:</span></span>
+<span class="line">  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span></span>
+<span class="line">  <span class="token key atrule">listen</span><span class="token punctuation">:</span> 0.0.0.0<span class="token punctuation">:</span><span class="token number">53</span></span>
+<span class="line">  <span class="token comment"># ipv6: false # 当为 false 时, AAAA 查询的响应将为空</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># 这些 名称服务器(nameservers) 用于解析下列 DNS 名称服务器主机名.</span></span>
+<span class="line">  <span class="token comment"># 仅指定 IP 地址</span></span>
+<span class="line">  <span class="token key atrule">default-nameserver</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token punctuation">-</span> 114.114.114.114</span>
+<span class="line">    <span class="token punctuation">-</span> 8.8.8.8</span>
+<span class="line">  <span class="token comment"># enhanced-mode: fake-ip</span></span>
+<span class="line">  <span class="token key atrule">fake-ip-range</span><span class="token punctuation">:</span> 198.18.0.1/16 <span class="token comment"># Fake IP 地址池 CIDR</span></span>
+<span class="line">  <span class="token comment"># use-hosts: true # 查找 hosts 并返回 IP 记录</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># search-domains: [local] # A/AAAA 记录的搜索域</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># 此列表中的主机名将不会使用 Fake IP 解析</span></span>
+<span class="line">  <span class="token comment"># 即, 对这些域名的请求将始终使用其真实 IP 地址进行响应</span></span>
+<span class="line">  <span class="token comment"># fake-ip-filter:</span></span>
+<span class="line">  <span class="token comment">#   - &#39;*.lan&#39;</span></span>
+<span class="line">  <span class="token comment">#   - localhost.ptlogin2.qq.com</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># 支持 UDP、TCP、DoT、DoH. 您可以指定要连接的端口.</span></span>
+<span class="line">  <span class="token comment"># 所有 DNS 查询都直接发送到名称服务器, 无需代理</span></span>
+<span class="line">  <span class="token comment"># Clash 使用第一个收到的响应作为 DNS 查询的结果.</span></span>
+<span class="line">  <span class="token key atrule">nameserver</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token punctuation">-</span> 114.114.114.114 <span class="token comment"># 默认值</span></span>
+<span class="line">    <span class="token punctuation">-</span> 8.8.8.8 <span class="token comment"># 默认值</span></span>
+<span class="line">    <span class="token punctuation">-</span> tls<span class="token punctuation">:</span>//dns.rubyfish.cn<span class="token punctuation">:</span><span class="token number">853</span> <span class="token comment"># DNS over TLS</span></span>
+<span class="line">    <span class="token punctuation">-</span> https<span class="token punctuation">:</span>//1.1.1.1/dns<span class="token punctuation">-</span>query <span class="token comment"># DNS over HTTPS</span></span>
+<span class="line">    <span class="token punctuation">-</span> dhcp<span class="token punctuation">:</span>//en0 <span class="token comment"># 来自 dhcp 的 dns</span></span>
+<span class="line">    <span class="token comment"># - &#39;8.8.8.8#en0&#39;</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># 当 `fallback` 存在时, DNS 服务器将向此部分中的服务器</span></span>
+<span class="line">  <span class="token comment"># 与 `nameservers` 中的服务器发送并发请求</span></span>
+<span class="line">  <span class="token comment"># 当 GEOIP 国家不是 `CN` 时, 将使用 fallback 服务器的响应</span></span>
+<span class="line">  <span class="token comment"># fallback:</span></span>
+<span class="line">  <span class="token comment">#   - tcp://1.1.1.1</span></span>
+<span class="line">  <span class="token comment">#   - &#39;tcp://1.1.1.1#en0&#39;</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># 如果使用 `nameservers` 解析的 IP 地址在下面指定的子网中,</span></span>
+<span class="line">  <span class="token comment"># 则认为它们无效, 并使用 `fallback` 服务器的结果.</span></span>
+<span class="line">  <span class="token comment">#</span></span>
+<span class="line">  <span class="token comment"># 当 `fallback-filter.geoip` 为 true 且 IP 地址的 GEOIP 为 `CN` 时,</span></span>
+<span class="line">  <span class="token comment"># 将使用 `nameservers` 服务器解析的 IP 地址.</span></span>
+<span class="line">  <span class="token comment">#</span></span>
+<span class="line">  <span class="token comment"># 如果 `fallback-filter.geoip` 为 false, 且不匹配 `fallback-filter.ipcidr`,</span></span>
+<span class="line">  <span class="token comment"># 则始终使用 `nameservers` 服务器的结果</span></span>
+<span class="line">  <span class="token comment">#</span></span>
+<span class="line">  <span class="token comment"># 这是对抗 DNS 污染攻击的一种措施.</span></span>
+<span class="line">  <span class="token comment"># fallback-filter:</span></span>
+<span class="line">  <span class="token comment">#   geoip: true</span></span>
+<span class="line">  <span class="token comment">#   geoip-code: CN</span></span>
+<span class="line">  <span class="token comment">#   ipcidr:</span></span>
+<span class="line">  <span class="token comment">#     - 240.0.0.0/4</span></span>
+<span class="line">  <span class="token comment">#   domain:</span></span>
+<span class="line">  <span class="token comment">#     - &#39;+.google.com&#39;</span></span>
+<span class="line">  <span class="token comment">#     - &#39;+.facebook.com&#39;</span></span>
+<span class="line">  <span class="token comment">#     - &#39;+.youtube.com&#39;</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># 通过特定的名称服务器查找域名</span></span>
+<span class="line">  <span class="token comment"># nameserver-policy:</span></span>
+<span class="line">  <span class="token comment">#   &#39;www.baidu.com&#39;: &#39;114.114.114.114&#39;</span></span>
+<span class="line">  <span class="token comment">#   &#39;+.internal.crop.com&#39;: &#39;10.0.0.1&#39;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># proxies:</span></span>
+<span class="line"><span class="token comment">#   # Shadowsocks</span></span>
+<span class="line"><span class="token comment">#   # 支持的加密方法:</span></span>
+<span class="line"><span class="token comment">#   #   aes-128-gcm aes-192-gcm aes-256-gcm</span></span>
+<span class="line"><span class="token comment">#   #   aes-128-cfb aes-192-cfb aes-256-cfb</span></span>
+<span class="line"><span class="token comment">#   #   aes-128-ctr aes-192-ctr aes-256-ctr</span></span>
+<span class="line"><span class="token comment">#   #   rc4-md5 chacha20-ietf xchacha20</span></span>
+<span class="line"><span class="token comment">#   #   chacha20-ietf-poly1305 xchacha20-ietf-poly1305</span></span>
+<span class="line"><span class="token comment">#   - name: &quot;ss1&quot;</span></span>
+<span class="line"><span class="token comment">#     type: ss</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     cipher: chacha20-ietf-poly1305</span></span>
+<span class="line"><span class="token comment">#     password: &quot;password&quot;</span></span>
+<span class="line"><span class="token comment">#     # udp: true</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   - name: &quot;ss2&quot;</span></span>
+<span class="line"><span class="token comment">#     type: ss</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     cipher: chacha20-ietf-poly1305</span></span>
+<span class="line"><span class="token comment">#     password: &quot;password&quot;</span></span>
+<span class="line"><span class="token comment">#     plugin: obfs</span></span>
+<span class="line"><span class="token comment">#     plugin-opts:</span></span>
+<span class="line"><span class="token comment">#       mode: tls # or http</span></span>
+<span class="line"><span class="token comment">#       # host: bing.com</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   - name: &quot;ss3&quot;</span></span>
+<span class="line"><span class="token comment">#     type: ss</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     cipher: chacha20-ietf-poly1305</span></span>
+<span class="line"><span class="token comment">#     password: &quot;password&quot;</span></span>
+<span class="line"><span class="token comment">#     plugin: v2ray-plugin</span></span>
+<span class="line"><span class="token comment">#     plugin-opts:</span></span>
+<span class="line"><span class="token comment">#       mode: websocket # 暂不支持 QUIC</span></span>
+<span class="line"><span class="token comment">#       # tls: true # wss</span></span>
+<span class="line"><span class="token comment">#       # skip-cert-verify: true</span></span>
+<span class="line"><span class="token comment">#       # host: bing.com</span></span>
+<span class="line"><span class="token comment">#       # path: &quot;/&quot;</span></span>
+<span class="line"><span class="token comment">#       # mux: true</span></span>
+<span class="line"><span class="token comment">#       # headers:</span></span>
+<span class="line"><span class="token comment">#       #   custom: value</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   # vmess</span></span>
+<span class="line"><span class="token comment">#   # 支持的加密方法:</span></span>
+<span class="line"><span class="token comment">#   #  auto/aes-128-gcm/chacha20-poly1305/none</span></span>
+<span class="line"><span class="token comment">#   - name: &quot;vmess&quot;</span></span>
+<span class="line"><span class="token comment">#     type: vmess</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     uuid: uuid</span></span>
+<span class="line"><span class="token comment">#     alterId: 32</span></span>
+<span class="line"><span class="token comment">#     cipher: auto</span></span>
+<span class="line"><span class="token comment">#     # udp: true</span></span>
+<span class="line"><span class="token comment">#     # tls: true</span></span>
+<span class="line"><span class="token comment">#     # skip-cert-verify: true</span></span>
+<span class="line"><span class="token comment">#     # servername: example.com # 优先于 wss 主机</span></span>
+<span class="line"><span class="token comment">#     # network: ws</span></span>
+<span class="line"><span class="token comment">#     # ws-opts:</span></span>
+<span class="line"><span class="token comment">#     #   path: /path</span></span>
+<span class="line"><span class="token comment">#     #   headers:</span></span>
+<span class="line"><span class="token comment">#     #     Host: v2ray.com</span></span>
+<span class="line"><span class="token comment">#     #   max-early-data: 2048</span></span>
+<span class="line"><span class="token comment">#     #   early-data-header-name: Sec-WebSocket-Protocol</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   - name: &quot;vmess-h2&quot;</span></span>
+<span class="line"><span class="token comment">#     type: vmess</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     uuid: uuid</span></span>
+<span class="line"><span class="token comment">#     alterId: 32</span></span>
+<span class="line"><span class="token comment">#     cipher: auto</span></span>
+<span class="line"><span class="token comment">#     network: h2</span></span>
+<span class="line"><span class="token comment">#     tls: true</span></span>
+<span class="line"><span class="token comment">#     h2-opts:</span></span>
+<span class="line"><span class="token comment">#       host:</span></span>
+<span class="line"><span class="token comment">#         - http.example.com</span></span>
+<span class="line"><span class="token comment">#         - http-alt.example.com</span></span>
+<span class="line"><span class="token comment">#       path: /</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   - name: &quot;vmess-http&quot;</span></span>
+<span class="line"><span class="token comment">#     type: vmess</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     uuid: uuid</span></span>
+<span class="line"><span class="token comment">#     alterId: 32</span></span>
+<span class="line"><span class="token comment">#     cipher: auto</span></span>
+<span class="line"><span class="token comment">#     # udp: true</span></span>
+<span class="line"><span class="token comment">#     # network: http</span></span>
+<span class="line"><span class="token comment">#     # http-opts:</span></span>
+<span class="line"><span class="token comment">#     #   # method: &quot;GET&quot;</span></span>
+<span class="line"><span class="token comment">#     #   # path:</span></span>
+<span class="line"><span class="token comment">#     #   #   - &#39;/&#39;</span></span>
+<span class="line"><span class="token comment">#     #   #   - &#39;/video&#39;</span></span>
+<span class="line"><span class="token comment">#     #   # headers:</span></span>
+<span class="line"><span class="token comment">#     #   #   Connection:</span></span>
+<span class="line"><span class="token comment">#     #   #     - keep-alive</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   - name: vmess-grpc</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     type: vmess</span></span>
+<span class="line"><span class="token comment">#     uuid: uuid</span></span>
+<span class="line"><span class="token comment">#     alterId: 32</span></span>
+<span class="line"><span class="token comment">#     cipher: auto</span></span>
+<span class="line"><span class="token comment">#     network: grpc</span></span>
+<span class="line"><span class="token comment">#     tls: true</span></span>
+<span class="line"><span class="token comment">#     servername: example.com</span></span>
+<span class="line"><span class="token comment">#     # skip-cert-verify: true</span></span>
+<span class="line"><span class="token comment">#     grpc-opts:</span></span>
+<span class="line"><span class="token comment">#       grpc-service-name: &quot;example&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   # socks5</span></span>
+<span class="line"><span class="token comment">#   - name: &quot;socks&quot;</span></span>
+<span class="line"><span class="token comment">#     type: socks5</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     # username: username</span></span>
+<span class="line"><span class="token comment">#     # password: password</span></span>
+<span class="line"><span class="token comment">#     # tls: true</span></span>
+<span class="line"><span class="token comment">#     # skip-cert-verify: true</span></span>
+<span class="line"><span class="token comment">#     # udp: true</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   # http</span></span>
+<span class="line"><span class="token comment">#   - name: &quot;http&quot;</span></span>
+<span class="line"><span class="token comment">#     type: http</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     # username: username</span></span>
+<span class="line"><span class="token comment">#     # password: password</span></span>
+<span class="line"><span class="token comment">#     # tls: true # https</span></span>
+<span class="line"><span class="token comment">#     # skip-cert-verify: true</span></span>
+<span class="line"><span class="token comment">#     # sni: custom.com</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   # Snell</span></span>
+<span class="line"><span class="token comment">#   # 请注意, 目前还没有UDP支持.</span></span>
+<span class="line"><span class="token comment">#   - name: &quot;snell&quot;</span></span>
+<span class="line"><span class="token comment">#     type: snell</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 44046</span></span>
+<span class="line"><span class="token comment">#     psk: yourpsk</span></span>
+<span class="line"><span class="token comment">#     # version: 2</span></span>
+<span class="line"><span class="token comment">#     # obfs-opts:</span></span>
+<span class="line"><span class="token comment">#       # mode: http # or tls</span></span>
+<span class="line"><span class="token comment">#       # host: bing.com</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   # Trojan</span></span>
+<span class="line"><span class="token comment">#   - name: &quot;trojan&quot;</span></span>
+<span class="line"><span class="token comment">#     type: trojan</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     password: yourpsk</span></span>
+<span class="line"><span class="token comment">#     # udp: true</span></span>
+<span class="line"><span class="token comment">#     # sni: example.com # aka 服务器名称</span></span>
+<span class="line"><span class="token comment">#     # alpn:</span></span>
+<span class="line"><span class="token comment">#     #   - h2</span></span>
+<span class="line"><span class="token comment">#     #   - http/1.1</span></span>
+<span class="line"><span class="token comment">#     # skip-cert-verify: true</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   - name: trojan-grpc</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     type: trojan</span></span>
+<span class="line"><span class="token comment">#     password: &quot;example&quot;</span></span>
+<span class="line"><span class="token comment">#     network: grpc</span></span>
+<span class="line"><span class="token comment">#     sni: example.com</span></span>
+<span class="line"><span class="token comment">#     # skip-cert-verify: true</span></span>
+<span class="line"><span class="token comment">#     udp: true</span></span>
+<span class="line"><span class="token comment">#     grpc-opts:</span></span>
+<span class="line"><span class="token comment">#       grpc-service-name: &quot;example&quot;</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   - name: trojan-ws</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     type: trojan</span></span>
+<span class="line"><span class="token comment">#     password: &quot;example&quot;</span></span>
+<span class="line"><span class="token comment">#     network: ws</span></span>
+<span class="line"><span class="token comment">#     sni: example.com</span></span>
+<span class="line"><span class="token comment">#     # skip-cert-verify: true</span></span>
+<span class="line"><span class="token comment">#     udp: true</span></span>
+<span class="line"><span class="token comment">#     # ws-opts:</span></span>
+<span class="line"><span class="token comment">#       # path: /path</span></span>
+<span class="line"><span class="token comment">#       # headers:</span></span>
+<span class="line"><span class="token comment">#       #   Host: example.com</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment">#   # ShadowsocksR</span></span>
+<span class="line"><span class="token comment">#   # 支持的加密方法: ss 中的所有流加密方法</span></span>
+<span class="line"><span class="token comment">#   # 支持的混淆方式:</span></span>
+<span class="line"><span class="token comment">#   #   plain http_simple http_post</span></span>
+<span class="line"><span class="token comment">#   #   random_head tls1.2_ticket_auth tls1.2_ticket_fastauth</span></span>
+<span class="line"><span class="token comment">#   # 支持的协议:</span></span>
+<span class="line"><span class="token comment">#   #   origin auth_sha1_v4 auth_aes128_md5</span></span>
+<span class="line"><span class="token comment">#   #   auth_aes128_sha1 auth_chain_a auth_chain_b</span></span>
+<span class="line"><span class="token comment">#   - name: &quot;ssr&quot;</span></span>
+<span class="line"><span class="token comment">#     type: ssr</span></span>
+<span class="line"><span class="token comment">#     server: server</span></span>
+<span class="line"><span class="token comment">#     port: 443</span></span>
+<span class="line"><span class="token comment">#     cipher: chacha20-ietf</span></span>
+<span class="line"><span class="token comment">#     password: &quot;password&quot;</span></span>
+<span class="line"><span class="token comment">#     obfs: tls1.2_ticket_auth</span></span>
+<span class="line"><span class="token comment">#     protocol: auth_sha1_v4</span></span>
+<span class="line"><span class="token comment">#     # obfs-param: domain.tld</span></span>
+<span class="line"><span class="token comment">#     # protocol-param: &quot;#&quot;</span></span>
+<span class="line"><span class="token comment">#     # udp: true</span></span>
+<span class="line"></span>
+<span class="line"><span class="token key atrule">proxy-groups</span><span class="token punctuation">:</span></span>
+<span class="line">  <span class="token comment"># 中继链路代理节点. 节点不应包含中继. 不支持 UDP.</span></span>
+<span class="line">  <span class="token comment"># 流量节点链路: clash &lt;-&gt; http &lt;-&gt; vmess &lt;-&gt; ss1 &lt;-&gt; ss2 &lt;-&gt; Internet</span></span>
+<span class="line">  <span class="token comment"># - name: &quot;relay&quot;</span></span>
+<span class="line">  <span class="token comment">#   type: relay</span></span>
+<span class="line">  <span class="token comment">#   proxies:</span></span>
+<span class="line">  <span class="token comment">#     - http</span></span>
+<span class="line">  <span class="token comment">#     - vmess</span></span>
+<span class="line">  <span class="token comment">#     - ss1</span></span>
+<span class="line">  <span class="token comment">#     - ss2</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># url-test 通过对 指定URL 进行基准速度测试来选择将使用哪个代理.</span></span>
+<span class="line">  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> <span class="token string">&quot;auto&quot;</span></span>
+<span class="line">    <span class="token key atrule">type</span><span class="token punctuation">:</span> url<span class="token punctuation">-</span>test</span>
+<span class="line">    <span class="token key atrule">use</span><span class="token punctuation">:</span></span>
+<span class="line">      <span class="token punctuation">-</span> provider1</span>
+<span class="line">    <span class="token comment"># proxies:</span></span>
+<span class="line">    <span class="token comment">#   - ss1</span></span>
+<span class="line">    <span class="token comment">#   - ss2</span></span>
+<span class="line">    <span class="token comment">#   - vmess1</span></span>
+<span class="line">    <span class="token comment"># tolerance: 150</span></span>
+<span class="line">    <span class="token comment"># lazy: true</span></span>
+<span class="line">    <span class="token key atrule">url</span><span class="token punctuation">:</span> <span class="token string">&#39;http://www.gstatic.com/generate_204&#39;</span></span>
+<span class="line">    <span class="token key atrule">interval</span><span class="token punctuation">:</span> <span class="token number">300</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># fallback-auto 基于优先级选择可用策略. 可用性通过访问 指定URL 来测试, 就像自动 url-test 组一样.</span></span>
+<span class="line">  <span class="token comment"># - name: &quot;fallback-auto&quot;</span></span>
+<span class="line">  <span class="token comment">#   type: fallback</span></span>
+<span class="line">  <span class="token comment">#   proxies:</span></span>
+<span class="line">  <span class="token comment">#     - ss1</span></span>
+<span class="line">  <span class="token comment">#     - ss2</span></span>
+<span class="line">  <span class="token comment">#     - vmess1</span></span>
+<span class="line">  <span class="token comment">#   url: &#39;http://www.gstatic.com/generate_204&#39;</span></span>
+<span class="line">  <span class="token comment">#   interval: 300</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># 负载均衡: 同一 eTLD+1 的请求将拨号到同一代理.</span></span>
+<span class="line">  <span class="token comment"># - name: &quot;load-balance&quot;</span></span>
+<span class="line">  <span class="token comment">#   type: load-balance</span></span>
+<span class="line">  <span class="token comment">#   proxies:</span></span>
+<span class="line">  <span class="token comment">#     - ss1</span></span>
+<span class="line">  <span class="token comment">#     - ss2</span></span>
+<span class="line">  <span class="token comment">#     - vmess1</span></span>
+<span class="line">  <span class="token comment">#   url: &#39;http://www.gstatic.com/generate_204&#39;</span></span>
+<span class="line">  <span class="token comment">#   interval: 300</span></span>
+<span class="line">    <span class="token comment"># strategy: consistent-hashing # or round-robin</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># select 手动选择, 用于选择代理或策略组</span></span>
+<span class="line">  <span class="token comment"># 您可以使用 RESTful API 来切换代理, 建议在GUI中切换.</span></span>
+<span class="line">  <span class="token comment"># - name: Proxy</span></span>
+<span class="line">  <span class="token comment">#   type: select</span></span>
+<span class="line">    <span class="token comment"># disable-udp: true</span></span>
+<span class="line">    <span class="token comment"># filter: &#39;someregex&#39;</span></span>
+<span class="line">    <span class="token comment"># proxies:</span></span>
+<span class="line">    <span class="token comment">#   - ss1</span></span>
+<span class="line">    <span class="token comment">#   - ss2</span></span>
+<span class="line">    <span class="token comment">#   - vmess1</span></span>
+<span class="line">    <span class="token comment">#   - auto</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># 直接连接到另一个接口名称或fwmark</span></span>
+<span class="line">  <span class="token comment"># - name: en1</span></span>
+<span class="line">  <span class="token comment">#   type: select</span></span>
+<span class="line">  <span class="token comment">#   interface-name: en1</span></span>
+<span class="line">  <span class="token comment">#   routing-mark: 6667</span></span>
+<span class="line">  <span class="token comment">#   proxies:</span></span>
+<span class="line">  <span class="token comment">#     - DIRECT</span></span>
+<span class="line"></span>
+<span class="line">  <span class="token comment"># 直接连接到另一个代理提供者</span></span>
+<span class="line">  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> UseProvider</span>
+<span class="line">    <span class="token key atrule">type</span><span class="token punctuation">:</span> select</span>
+<span class="line">    <span class="token key atrule">use</span><span class="token punctuation">:</span></span>
+<span class="line">      <span class="token punctuation">-</span> provider1</span>
+<span class="line">    <span class="token comment"># proxies:</span></span>
+<span class="line">    <span class="token comment">#   - Proxy</span></span>
+<span class="line">    <span class="token comment">#   - DIRECT</span></span>
+<span class="line"></span>
+<span class="line"><span class="token key atrule">proxy-providers</span><span class="token punctuation">:</span></span>
+<span class="line">  <span class="token key atrule">provider1</span><span class="token punctuation">:</span></span>
+<span class="line">    <span class="token key atrule">type</span><span class="token punctuation">:</span> http</span>
+<span class="line">    <span class="token key atrule">url</span><span class="token punctuation">:</span> <span class="token string">&quot;url&quot;</span></span>
+<span class="line">    <span class="token key atrule">interval</span><span class="token punctuation">:</span> <span class="token number">3600</span></span>
+<span class="line">    <span class="token key atrule">path</span><span class="token punctuation">:</span> ./provider1.yaml</span>
+<span class="line">    <span class="token key atrule">health-check</span><span class="token punctuation">:</span></span>
+<span class="line">      <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></span>
+<span class="line">      <span class="token key atrule">interval</span><span class="token punctuation">:</span> <span class="token number">600</span></span>
+<span class="line">      <span class="token comment"># lazy: true</span></span>
+<span class="line">      <span class="token key atrule">url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//www.gstatic.com/generate_204</span>
+<span class="line">  <span class="token comment"># test:</span></span>
+<span class="line">  <span class="token comment">#   type: file</span></span>
+<span class="line">  <span class="token comment">#   path: /test.yaml</span></span>
+<span class="line">  <span class="token comment">#   health-check:</span></span>
+<span class="line">  <span class="token comment">#     enable: true</span></span>
+<span class="line">  <span class="token comment">#     interval: 36000</span></span>
+<span class="line">  <span class="token comment">#     url: http://www.gstatic.com/generate_204</span></span>
+<span class="line"></span>
+<span class="line"><span class="token comment"># tunnels:</span></span>
+<span class="line">  <span class="token comment"># 单行配置</span></span>
+<span class="line">  <span class="token comment"># - tcp/udp,127.0.0.1:6553,114.114.114.114:53,proxy</span></span>
+<span class="line">  <span class="token comment"># - tcp,127.0.0.1:6666,rds.mysql.com:3306,vpn</span></span>
+<span class="line">  <span class="token comment"># 全 yaml 配置</span></span>
+<span class="line">  <span class="token comment"># - network: [tcp, udp]</span></span>
+<span class="line">  <span class="token comment">#   address: 127.0.0.1:7777</span></span>
+<span class="line">  <span class="token comment">#   target: target.com</span></span>
+<span class="line">  <span class="token comment">#   proxy: proxy</span></span>
+<span class="line"></span>
+<span class="line"><span class="token key atrule">rules</span><span class="token punctuation">:</span></span>
+<span class="line">  <span class="token punctuation">-</span> DOMAIN<span class="token punctuation">-</span>SUFFIX<span class="token punctuation">,</span>google.com<span class="token punctuation">,</span>auto</span>
+<span class="line">  <span class="token punctuation">-</span> DOMAIN<span class="token punctuation">-</span>KEYWORD<span class="token punctuation">,</span>google<span class="token punctuation">,</span>auto</span>
+<span class="line">  <span class="token punctuation">-</span> DOMAIN<span class="token punctuation">,</span>google.com<span class="token punctuation">,</span>auto</span>
+<span class="line">  <span class="token punctuation">-</span> DOMAIN<span class="token punctuation">-</span>SUFFIX<span class="token punctuation">,</span>ad.com<span class="token punctuation">,</span>REJECT</span>
+<span class="line">  <span class="token punctuation">-</span> SRC<span class="token punctuation">-</span>IP<span class="token punctuation">-</span>CIDR<span class="token punctuation">,</span>192.168.1.201/32<span class="token punctuation">,</span>DIRECT</span>
+<span class="line">  <span class="token comment"># 用于 IP 规则 (GEOIP, IP-CIDR, IP-CIDR6) 的可选参数 &quot;no-resolve&quot;</span></span>
+<span class="line">  <span class="token punctuation">-</span> IP<span class="token punctuation">-</span>CIDR<span class="token punctuation">,</span>127.0.0.0/8<span class="token punctuation">,</span>DIRECT</span>
+<span class="line">  <span class="token punctuation">-</span> GEOIP<span class="token punctuation">,</span>CN<span class="token punctuation">,</span>DIRECT</span>
+<span class="line">  <span class="token punctuation">-</span> DST<span class="token punctuation">-</span>PORT<span class="token punctuation">,</span><span class="token number">80</span><span class="token punctuation">,</span>DIRECT</span>
+<span class="line">  <span class="token punctuation">-</span> SRC<span class="token punctuation">-</span>PORT<span class="token punctuation">,</span><span class="token number">7777</span><span class="token punctuation">,</span>DIRECT</span>
+<span class="line">  <span class="token punctuation">-</span> RULE<span class="token punctuation">-</span>SET<span class="token punctuation">,</span>apple<span class="token punctuation">,</span>REJECT <span class="token comment"># 仅 Premium 版本支持</span></span>
+<span class="line">  <span class="token punctuation">-</span> MATCH<span class="token punctuation">,</span>auto</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><!----></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/SimpleWiki/assets/app-C0b3YH3R.js" defer></script>
+  </body>
+</html>
