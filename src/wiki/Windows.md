@@ -28,43 +28,90 @@
 - [官网](https://www.microsoft.com/zh-cn/software-download/windows11)
 - [x64 BT](magnet:?xt=urn:btih:2fc6fc24f7d56d1def32ae0334d2df0cd3b855ea&dn=zh-cn_windows_11_consumer_editions_version_24h2_x64_dvd_bfc0d79b.iso&xl=5829044224)
 - [arm64 BT](magnet:?xt=urn:btih:7aa30070e35c2e38491a7f7addb014623818f2e5&dn=zh-cn_windows_11_consumer_editions_version_24h2_arm64_dvd_4b5c8070.iso&xl=5674188800)
+
 ## 安装步骤
-### 直接使用镜像安装
-#### 镜像准备
-- 使用[qBittorrent](https://www.fosshub.com/qBittorrent.html)下载ISO镜像的BT链接
-#### 使用WindowsPC辅助安装准备
-1. 使用DiskGenius选择U盘(8G及以上)分区方案
+### 1. 下载镜像
+- 推荐使用浏览器直接从官网下载
+- BT链接推荐使用[qBittorrent](https://www.fosshub.com/qBittorrent.html)进行下载
+### 2. 写入镜像到存储设备
+> 若需要无损使用存储设备或单次安装使用以下方式写入(不进行格式化可不清空设备)
+#### 使用Windows写入(无损写入直接进行第三步)
+1. 使用DiskGenius检查U盘(8G及以上)分区方案
    - 推荐转换为MBR分区
        - 仅支持Legacy启动的电脑（约2010年前）
        - 支持UEFI启动的电脑
    - 转换为GPT分区
        - 支持UEFI启动的电脑
        - 有多于4个分区或多EFI启动的需求
-2. 使用DiskGenius格式化U盘
-   - 格式化为FAT32格式
-       - 仅支持Legacy启动的电脑（约2010年前）
-       - 仅支持FAT32分区UEFI启动的电脑（约2015年前）
-       - U盘有其他特殊设备用途（旧版安卓或传统设备使用）
-   - 推荐格式化为ExFAT
-       - 写入设备为U盘
-       - 支持从任意格式分区UEFI启动的电脑
-       - 镜像内单文件超过4G
-   - 格式化为NTFS
-       - 写入设备为硬盘
-#### 使用Android手机辅助安装准备
-1. 使用OTG转接头或手机接口U盘(8G及以上)插入手机
-2. 确认U盘格式
-   - FAT32为默认安卓格式化格式
-       - 适用于所有支持UEFI启动的电脑
-   - ExFAT或NTFS
-       - 不适用于仅支持从FAT32分区UEFI启动的电脑
-   - FAT16
-       - 仅适用于特殊情况的UEFI启动
+2. 检查分区格式(可尝试跳过避免格式化清空)
+    - 格式化为FAT32格式
+        - 仅支持Legacy启动的电脑（约2010年前）
+        - 仅支持FAT32分区UEFI启动的电脑（约2015年前）
+        - U盘有其他特殊设备用途（旧版安卓或传统设备使用）
+    - 推荐格式化为ExFAT
+        - 写入设备为U盘
+        - 支持从任意格式分区UEFI启动的电脑
+        - 镜像内单文件超过4G
+    - 格式化为NTFS
+        - 写入设备为硬盘
 3. 使用解压软件或自带文件管理解压ISO到U盘根目录
-   - 确保EFI文件夹位于U盘根目录
-4. 解压完成在下拉状态栏或设置安全弹出U盘
-   - 安卓设备往往写入会使用缓存，安全弹出能确保写入已完成
-### 使用WindowsPE系统辅助安装
+    - 确保EFI文件夹位于U盘根目录
+#### 使用Android写入(无损写入直接进行第三步)
+1. 使用OTG转接头将U盘(8G及以上)插入手机
+2. 检查分区格式(可尝试跳过避免格式化清空)
+    - FAT32为默认安卓格式化格式
+        - 适用于所有支持UEFI启动的电脑
+    - ExFAT或NTFS
+        - 不适用于仅支持从FAT32分区UEFI启动的电脑
+    - FAT16
+        - 仅适用于特殊情况的UEFI启动
+3. 使用解压软件或自带文件管理解压ISO到U盘根目录
+    - 确保EFI文件夹位于U盘根目录
+    - 安卓设备写入会使用缓存，确保解压完成后下拉状态栏进行安全弹出
+> 若此存储设备需要专用于系统维护使用以下方式写入
+#### 使用WinPE辅助维护和安装
+1. 下载[微PE](https://www.wepe.com.cn/download.html)运行并插入存储设备
+2. 制作启动盘
+   - 清空存储设备制作:根据工具指引直接制作
+   - 保留存储设备文件手动制作:生成ISO镜像，参考Bootice工具写入教程
+3. 将ISO文件放入非启动分区内(通常为ExFAT格式或最大分区)
+
+### 3. 进入BIOS引导存储设备启动
+
+
+### 4. 执行安装
+
+## 激活系统
+### Microsoft Activation Scripts
+#### 官方地址
+- <https://github.com/massgravel/Microsoft-Activation-Scripts>
+#### PowerShell命令获取
+```shell
+irm https://get.activated.win | iex
+```
+### HEU KMS Activator
+#### 官方地址
+- <https://github.com/zbezj/HEU_KMS_Activator/releases>
+
+## 驱动安装
+### Intel显卡驱动
+- [Arc和Xe显卡驱动](https://www.intel.cn/content/www/cn/zh/download/785597/intel-arc-iris-xe-graphics-windows.html)
+- [7-10代核芯显卡驱动](https://www.intel.cn/content/www/cn/zh/download/776137/intel-7th-10th-gen-processor-graphics-windows.html)
+### NVIDIA显卡驱动
+- [NVIDIA App](https://www.nvidia.cn/software/nvidia-app/)
+- [显卡驱动](https://www.nvidia.cn/geforce/drivers/)
+### AMD显卡驱动
+- [AMD Software](https://www.amd.com/zh-cn/products/software/adrenalin.html)
+- [显卡驱动](https://www.amd.com/zh-cn/support/download/drivers.html)
+### Intel网卡驱动
+- [WiFi驱动](https://www.intel.cn/content/www/cn/zh/download/19351/windows-10-and-windows-11-wi-fi-drivers-for-intel-wireless-adapters.html)
+- [Bluetooth驱动](https://www.intel.cn/content/www/cn/zh/download/18649/intel-wireless-bluetooth-drivers-for-windows-10-and-windows-11.html)
+### Realtek声卡驱动
+### Realtek网卡驱动
+
+## 运行库安装
+### Visual C++
+### .NET Framework
 
 ## 优化脚本
 ### 修改右键菜单风格(管理员权限)

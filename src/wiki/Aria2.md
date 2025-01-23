@@ -1,4 +1,7 @@
 # Aria2:开源下载工具
+## 下载地址
+- [Github](https://github.com/aria2/aria2)
+
 ## 使用方法
 1. 在软件根目录创建并配置aria2.conf文件
 2. 在软件根目录创建空白aria2.session文件
