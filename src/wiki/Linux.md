@@ -1,4 +1,4 @@
-# Linux:系统下载地址
+# Linux:系统安装
 ## 下载链接
 - [ArchLinux](https://archlinux.org/download/)
 - [CentOS](https://www.centos.org/download/)
