@@ -1,4 +1,7 @@
 # NextTrace:路由跟踪工具
+## 仓库地址
+- [GitHub](https://github.com/nxtrace/NTrace-core)
+
 ## 使用方法
 ```shell
 #创建防火墙入站规则

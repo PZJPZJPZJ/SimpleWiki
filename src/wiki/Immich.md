@@ -21,7 +21,6 @@ services:
     volumes:
       - ./upload:/usr/src/app/upload
       - /etc/localtime:/etc/localtime:ro
-      - /vol1/1000/Backup/图片:/usr/src/app/external:ro
     ports:
       - 2283:2283
     depends_on:

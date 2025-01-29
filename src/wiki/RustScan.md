@@ -1,6 +1,6 @@
 # RustScan:端口批量扫描工具
 ## 官方地址
-- [Github](https://github.com/RustScan/RustScan)
+- [GitHub](https://github.com/RustScan/RustScan)
 
 ## 使用命令
 ```shell

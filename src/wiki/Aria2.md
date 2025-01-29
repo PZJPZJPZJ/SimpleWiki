@@ -1,6 +1,7 @@
 # Aria2:开源下载工具
-## 下载地址
-- [Github](https://github.com/aria2/aria2)
+## 仓库地址
+- [Aira2](https://github.com/aria2/aria2)
+- [AriaNg](https://github.com/mayswind/AriaNg)
 
 ## 使用方法
 1. 在软件根目录创建并配置aria2.conf文件

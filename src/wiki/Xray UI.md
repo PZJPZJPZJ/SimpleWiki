@@ -1,6 +1,6 @@
 # Xray UI:代理服务器管理面板
-## 官方仓库
-- https://github.com/MHSanaei/3x-ui
+## 仓库地址
+- [3X-UI](https://github.com/MHSanaei/3x-ui)
 
 ## Docker部署
 ```shell
