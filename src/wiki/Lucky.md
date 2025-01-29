@@ -1,4 +1,4 @@
-# Lucky:网络穿透工具
+# Lucky:网络打洞穿透工具
 ## 下载地址
 - [Github](https://github.com/gdy666/lucky)
 
@@ -13,3 +13,7 @@ services:
         network_mode: host
         restart: always
 ```
+
+## 相关仓库
+- [Natter](https://github.com/MikeWang000000/Natter)
+- [NATMap](https://github.com/heiher/natmap)
