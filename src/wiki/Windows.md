@@ -1,4 +1,4 @@
-# Windows:系统安装
+# Windows:微软系统安装流程
 ## 下载链接
 ### Windows XP
 - [MSDN](https://msdn.itellyou.cn/)

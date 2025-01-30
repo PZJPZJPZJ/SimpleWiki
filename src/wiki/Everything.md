@@ -1,6 +1,6 @@
 # Everything:文件搜索工具
 ## 官方网站
-- https://www.voidtools.com/
+- <https://www.voidtools.com/>
 ## 文件说明
 - Everything.ini：设置项存储
 - Everything.db：索引结果目录数据库
