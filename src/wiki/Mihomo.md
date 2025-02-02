@@ -21,6 +21,7 @@ services:
 ```
 
 将[配置文件](#常用配置文件)命名为config.yaml，修改proxy-providers的url为订阅地址，放在`/root/.config/mihomo`目录中
+
 ## 连接方式
 ### HTTP/HTTPS:应用级TCP代理
 - 仅遵循HTTP代理应用可用
@@ -44,8 +45,8 @@ iptables -t nat -A CLASH -p tcp -j REDIRECT --to-ports 7892
 iptables -t nat -A PREROUTING -p tcp -j CLASH
 ```
 
-### Tproxy:透明网关模式 TCP/UDP
-Linux 劫持网络数据包流量转发到 tproxy 端口
+### Tproxy:透明网关模式 TCP/UDP(仅Linux可用)
+- 创建路由规则劫持流量转发
 ```shell
 # 将所有进入本机的 tcp/udp 数据包交给 tproxy
 iptables -t mangle -A PREROUTING -p tcp -j TPROXY --on-ip 127.0.0.1 --on-port 7893
@@ -87,7 +88,7 @@ ip6tables -t mangle -A CLASH6 -p udp -j MARK --set-mark 1
 # 对于本机非 clash-meta 用户都启用透明代理
 ip6tables -t mangle -A OUTPUT -m owner ! --uid-owner clash-meta -j CLASH6
 ```
-完全删除上述规则
+- 删除上述规则
 ```shell
 # 删除本机重路由规则
 ip rule del fwmark 1 table 100
@@ -109,9 +110,9 @@ ip6tables -t mangle -D PREROUTING -j CLASH6_LAN
 ip6tables -t mangle -F CLASH6_LAN
 ip6tables -t mangle -X CLASH6_LAN
 ```
-### TUN:网卡模式|旁路网关模式
+### TUN:网卡模式(旁路网关)
 #### Linux
-- 宿主机直接运行Mihomo，或Docker成功启用privileged特权模式，宿主系统会创建TUN网卡，自动识别出口网卡并拦截流量至Mihomo
+- 宿主机运行Mihomo，或Docker成功启用privileged特权模式，系统会创建TUN网卡，自动识别出口网卡并拦截流量至Mihomo
 #### Windows
 - 临时启动
   1. 以管理员权限运行Mihomo，系统会创建TUN网卡，自动代理本机所有流量
@@ -123,7 +124,15 @@ ip6tables -t mangle -X CLASH6_LAN
   5. 操作：新建>程序或脚本选择`mihomo.exe`>添加参数`-d C:\Users\Admin\.config\mihomo`>确定
   6. 保存任务即可
 
-## [常用配置文件](https://wiki.metacubex.one/)
+## 规则配置
+### 规则仓库
+- [BlackMatrix详细规则](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash)
+- [SSTap游戏规则](https://github.com/FQrabbit/SSTap-Rule/releases)
+- [GeoSite解析](https://github.com/v2fly/domain-list-community/tree/master/data)
+- [GeoIP解析](https://github.com/Loyalsoldier/geoip/tree/release/text)
+
+## 常用配置文件
+- [Mihomo Wiki](https://wiki.metacubex.one/)
 ```yaml
 port: 7890
 socks-port: 7891
@@ -216,9 +225,9 @@ proxy-providers:
       interval: 300
 
 proxy-groups:
-  - name: 默认
+  - name: 自动
     type: fallback
-    proxies: [香港,台湾,日本,韩国,美国,英国,加拿大,新加坡,DIRECT]
+    proxies: [香港,台湾,日本,韩国,美国,新加坡,DIRECT]
     url: https://cp.cloudflare.com/generate_204
     interval: 60
 
@@ -226,73 +235,83 @@ proxy-groups:
     type: url-test
     include-all: true
     filter: "(?i)香港"
+    exclude-filter: "(?i)专线"
     tolerance: 60
 
   - name: 台湾
     type: url-test
     include-all: true
     filter: "(?i)台湾"
+    exclude-filter: "(?i)专线"
     tolerance: 60
 
   - name: 日本
     type: url-test
     include-all: true
     filter: "(?i)日本"
+    exclude-filter: "(?i)专线"
     tolerance: 60
 
   - name: 韩国
     type: url-test
     include-all: true
     filter: "(?i)韩国"
+    exclude-filter: "(?i)专线"
     tolerance: 60
 
   - name: 美国
     type: url-test
     include-all: true
     filter: "(?i)美国"
-    tolerance: 60
-
-  - name: 英国
-    type: url-test
-    include-all: true
-    filter: "(?i)英国"
-    tolerance: 60
-
-  - name: 加拿大
-    type: url-test
-    include-all: true
-    filter: "(?i)加拿大"
+    exclude-filter: "(?i)专线"
     tolerance: 60
 
   - name: 新加坡
     type: url-test
     include-all: true
     filter: "(?i)新加坡"
+    exclude-filter: "(?i)专线"
     tolerance: 60
 
 rules:
-  - GEOIP,lan,DIRECT,no-resolve
-  - GEOSITE,github,默认
-  - GEOSITE,twitter,默认
-  - GEOSITE,youtube,默认
-  - GEOSITE,google,默认
-  - GEOSITE,telegram,默认
-  - GEOSITE,netflix,默认
-  - GEOSITE,spotify,默认
+  # Lan
+  - GEOIP,private,DIRECT,no-resolve
+  # Github
+  - GEOSITE,github,自动
+  # Twitter
+  - GEOSITE,twitter,自动
+  - GEOIP,twitter,自动
+  # Youtube
+  - GEOSITE,youtube,自动
+  # Google
+  - GEOSITE,google,自动
+  - GEOIP,google,自动
+  # NETFLIX
+  - GEOSITE,netflix,自动
+  - GEOIP,netflix,自动
+  # Spotify
+  - GEOSITE,spotify,自动
+  # Bahamut
   - GEOSITE,bahamut,台湾
-  - GEOSITE,openai,日本
+  # AI
+  - GEOSITE,category-ai-chat-!cn,美国
+  # Telegram
+  - GEOSITE,telegram,自动
+  - GEOIP,telegram,自动
+  # Steam
+  - DOMAIN-SUFFIX,steamserver.net,DIRECT
+  - GEOSITE,steam@cn,DIRECT
+  - GEOSITE,steam,自动
+  # Bilibili
   - GEOSITE,bilibili,DIRECT
+  # China
   - GEOSITE,CN,DIRECT
-  - GEOSITE,geolocation-!cn,默认
-  - GEOIP,google,默认
-  - GEOIP,netflix,默认
-  - GEOIP,telegram,默认
-  - GEOIP,twitter,默认
-  - GEOIP,private,DIRECT
   - GEOIP,CN,DIRECT
-  - MATCH,默认
+  # Others
+  - MATCH,自动
 ```
-## [配置文件示例](https://github.com/MetaCubeX/mihomo/blob/Alpha/docs/config.yaml)
+## 配置文件示例
+- [Mihomo GitHub](https://github.com/MetaCubeX/mihomo/blob/Alpha/docs/config.yaml)
 ```yaml
 # port: 7890 # HTTP(S) 代理服务器端口
 # socks-port: 7891 # SOCKS5 代理端口
