@@ -186,3 +186,10 @@ Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
 # 卸载移动设备
 Get-AppxPackage MicrosoftWindows.CrossDevice -AllUsers | Remove-AppxPackage
 ```
+### 禁用Win11多平面叠加导致显示残留问题
+```shell
+# 禁用MPO
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /t REG_DWORD /d 5 /f
+# 恢复MPO
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /f
+```
