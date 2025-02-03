@@ -172,3 +172,17 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Ad
 # 长时间格式(显示秒数)
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSecondsInSystemClock /t REG_DWORD /d 1 /f
 ```
+### 卸载Win11小组件(管理员权限)
+```shell
+winget uninstall "Widgets Platform Runtime"
+winget uninstall "Windows Web Experience Pack"
+```
+### 卸载自带程序(管理员权限)
+```shell
+# 列出WinApp列表
+Get-AppxPackage -allusers | Select Name,PackageFullName
+# 卸载手机连接
+Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
+# 卸载移动设备
+Get-AppxPackage MicrosoftWindows.CrossDevice -AllUsers | Remove-AppxPackage
+```
