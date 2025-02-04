@@ -107,14 +107,37 @@ irm https://get.activated.win | iex
 - [WiFi驱动](https://www.intel.cn/content/www/cn/zh/download/19351/windows-10-and-windows-11-wi-fi-drivers-for-intel-wireless-adapters.html)
 - [Bluetooth驱动](https://www.intel.cn/content/www/cn/zh/download/18649/intel-wireless-bluetooth-drivers-for-windows-10-and-windows-11.html)
 ### Realtek声卡驱动
+- [High Definition Audio](https://www.realtek.com/Download/List?cate_id=593&menu_id=298)
 ### Realtek网卡驱动
+- [Network Interface Controllers](https://www.realtek.com/Download/Index?cate_id=194&menu_id=368)
 
 ## 运行库安装
-### Visual C++
-### .NET Framework
+### [Visual C++](https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170)
+- [Microsoft Visual C++2015-2022 X64](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+- [Microsoft Visual C++2015-2022 X86](https://aka.ms/vs/17/release/vc_redist.x86.exe)
+- [Microsoft Visual C++2015-2022 ARM64](https://aka.ms/vs/17/release/vc_redist.arm64.exe)
+- [Microsoft Visual C++2013 X64](https://aka.ms/highdpimfc2013x64enu)
+- [Microsoft Visual C++2013 X86](https://aka.ms/highdpimfc2013x86enu)
+- [Microsoft Visual C++2012 UP4 X64](https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x64.exe)
+- [Microsoft Visual C++2012 UP4 X86](https://download.microsoft.com/download/1/6/B/16B06F60-3B20-4FF2-B699-5E9B7962F9AE/VSU_4/vcredist_x86.exe)
+- [Microsoft Visual C++2010 SP1 X64](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x64.exe)
+- [Microsoft Visual C++2010 SP1 X86](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe)
+- [Microsoft Visual C++2008 SP1 X64](https://download.microsoft.com/download/5/D/8/5D8C65CB-C849-4025-8E95-C3966CAFD8AE/vcredist_x64.exe)
+- [Microsoft Visual C++2008 SP1 X86](https://download.microsoft.com/download/5/D/8/5D8C65CB-C849-4025-8E95-C3966CAFD8AE/vcredist_x86.exe)
+- [Microsoft Visual C++2005 SP1 X64](https://download.microsoft.com/download/4/A/2/4A22001F-FA3B-4C13-BF4E-42EC249D51C4/vcredist_x64.EXE)
+- [Microsoft Visual C++2005 SP1 X86](https://download.microsoft.com/download/4/A/2/4A22001F-FA3B-4C13-BF4E-42EC249D51C4/vcredist_x86.EXE)
+
+### [.NET Framework](https://dotnet.microsoft.com/zh-cn/download/dotnet-framework)
+- [.NET 7.0 Runtime x64](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-7.0.20-windows-x64-installer)
+- [.NET 6.0 Runtime x64](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-6.0.36-windows-x64-installer)
+- [.NET 5.0 Runtime x64](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-5.0.17-windows-x64-installer)
+- [.NET Framework 4.8.1](https://dotnet.microsoft.com/zh-cn/download/dotnet-framework/net481)
+- [.NET Framework 4.7.2](https://dotnet.microsoft.com/zh-cn/download/dotnet-framework/net472)
+- [.NET Framework 3.5 SP1](https://dotnet.microsoft.com/zh-cn/download/dotnet-framework/net35-sp1)
 
 ## 优化脚本
-### 修改右键菜单风格(管理员权限)
+> 脚本推荐使用PowerShell管理员权限执行
+### 修改右键菜单风格
 ```shell
 # 新样式(Win11)
 reg delete "HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /va /f
@@ -123,15 +146,16 @@ reg add "HKEY_CURRENT_USER\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c90
 # 修改结束后重启资源管理器
 tskill explorer
 ```
-### 恢复睡眠功能(管理员权限)
+### 恢复睡眠功能
 ```shell
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power" /v AwayModeEnabled /t REG_DWORD /d 0 /f
 ```
-### 删除WindowsDefender记录(SYSTEM权限或PE执行)
+### 删除WindowsDefender记录
 ```shell
+# 使用SYSTEM权限或PE执行
 rd /s /Q "C:\ProgramData\Microsoft\Windows Defender\Scans\History\Service\DetectionHistory"
 ```
-### 删除聚焦桌面图标(管理员权限)
+### 删除聚焦桌面图标
 ```shell
 # 关闭图标
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /v {2CC5CA98-6485-489A-920E-B3E88A6CCCE3} /t REG_DWORD /d 1 /f
@@ -151,33 +175,33 @@ start explorer.exe
 ```shell
 powercfg /batteryreport /output BatteryReport.html
 ```
-### 修改WebDAV安全设置(管理员权限)
+### 修改WebDAV安全设置
 ```shell
 # 使用HTTP
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters" /v BasicAuthLevel /t REG_DWORD /d 2 /f
 # 仅使用HTTPS
 reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters" /v BasicAuthLevel /t REG_DWORD /d 1 /f
 ```
-### 修改错误报告服务(管理员权限)
+### 修改错误报告服务
 ```shell
 # 开启Windows错误报告
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting" /v Disabled /f
 # 关闭Windows错误报告
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting" /v Disabled /t REG_DWORD /d 1 /f
 ```
-### 修改任务栏时间格式(管理员权限)
+### 修改任务栏时间格式
 ```shell
 # 短时间格式
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSecondsInSystemClock /t REG_DWORD /d 0 /f
 # 长时间格式(显示秒数)
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v ShowSecondsInSystemClock /t REG_DWORD /d 1 /f
 ```
-### 卸载Win11小组件(管理员权限)
+### 卸载Win11小组件
 ```shell
 winget uninstall "Widgets Platform Runtime"
 winget uninstall "Windows Web Experience Pack"
 ```
-### 卸载自带程序(管理员权限)
+### 卸载Windows自带程序
 ```shell
 # 列出WinApp列表
 Get-AppxPackage -allusers | Select Name,PackageFullName
@@ -186,10 +210,10 @@ Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
 # 卸载移动设备
 Get-AppxPackage MicrosoftWindows.CrossDevice -AllUsers | Remove-AppxPackage
 ```
-### 禁用Win11多平面叠加导致显示残留问题
+### 禁用Win11多平面叠加
 ```shell
 # 禁用MPO
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /t REG_DWORD /d 5 /f
-# 恢复MPO
+# 恢复MPO(可能导致显示残留问题)
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /f
 ```
