@@ -40,7 +40,7 @@
     - 安卓设备写入会使用缓存，确保解压完成后下拉状态栏进行安全弹出
 > 若此存储设备需要专用于系统维护使用以下方式写入
 #### 使用WinPE辅助维护和安装
-1. 下载[微PE](https://www.wepe.com.cn/download.html)运行并插入存储设备
+1. 下载[微PE](https://www.wepe.com.cn/download.html)或[FirPE](https://www.firpe.cn/)运行并插入存储设备
 2. 制作启动盘
    - 清空存储设备制作:根据工具指引直接制作
    - 保留存储设备文件手动制作:生成ISO镜像，参考Bootice工具写入教程
@@ -211,4 +211,13 @@ Get-AppxPackage MicrosoftWindows.CrossDevice -AllUsers | Remove-AppxPackage
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /t REG_DWORD /d 5 /f
 # 恢复MPO(可能导致显示残留问题)
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Dwm" /v OverlayTestMode /f
+```
+### 允许PowerShell运行未签名脚本
+```shell
+# 获取当前状态
+get-executionpolicy
+# 关闭安全策略(选择Y确认)
+set-executionpolicy remotesigned
+# 恢复默认安全策略(选择Y确认)
+set-executionpolicy restricted
 ```
