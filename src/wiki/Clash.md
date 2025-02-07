@@ -1,13 +1,14 @@
-# Clash:ClashPremium代理核心配置
-## DockerCLI
+# Clash:代理工具核心
+## 安装教程
+### Windows
+- 将[配置文件](#配置文件示例)命名为config.yaml，修改proxy-providers的url为订阅地址，放在`C:\Users\Admin\.config\clash`目录中,运行`clash.exe`
+### Linux
+- 将[配置文件](#配置文件示例)命名为config.yaml，修改proxy-providers的url为订阅地址，放在`/root/.config/clash`目录中,运行`./clash`
+### DockerCLI
 ```shell
 docker run -d --name clash --restart=always --net=host dreamacro/clash-premium
 ```
-## 配置文件地址
-### Windows
-`C:\Users\Admin\.config\clash\config.yaml`
-### Linux
-`Linux：/root/.config/clash/config.yaml`
+
 ## 配置文件示例
 ```yaml
 # HTTP(S) 代理服务端口

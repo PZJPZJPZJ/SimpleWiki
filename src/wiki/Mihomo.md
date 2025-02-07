@@ -1,4 +1,4 @@
-# Mihomo:ClashMeta代理核心配置
+# Mihomo:代理工具核心
 ## 下载地址
 - [核心程序](https://github.com/MetaCubeX/mihomo)
 - [WindowsUI](https://github.com/clash-verge-rev/clash-verge-rev)
@@ -6,7 +6,9 @@
 
 ## 安装教程
 ### Windows
-将[配置文件](#常用配置文件)命名为config.yaml，修改proxy-providers的url为订阅地址，放在`C:\Users\Admin\.config\mihomo`目录中,运行`mihomo.exe`
+- 将[配置文件](#常用配置文件)命名为config.yaml，修改proxy-providers的url为订阅地址，放在`C:\Users\Admin\.config\mihomo`目录中,运行`mihomo.exe`
+### Linux
+- 将[配置文件](#常用配置文件)命名为config.yaml，修改proxy-providers的url为订阅地址，放在`/root/.config/mihomo`目录中,运行`./mihomo`
 ### DockerCompose
 ```yaml
 services:
@@ -20,7 +22,9 @@ services:
       - ./config:/root/.config/mihomo
 ```
 
-将[配置文件](#常用配置文件)命名为config.yaml，修改proxy-providers的url为订阅地址，放在`/root/.config/mihomo`目录中
+## 订阅转换
+### 下载地址
+- [Sub Store](https://github.com/sub-store-org/Sub-Store)
 
 ## 连接方式
 ### HTTP/HTTPS:应用级TCP代理
