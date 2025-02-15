@@ -23,8 +23,18 @@ services:
 ```
 
 ## 订阅转换
-### 下载地址
-- [Sub Store](https://github.com/sub-store-org/Sub-Store)
+### SubConverter
+1. 下载[SubConverter](https://github.com/tindy2013/subconverter)
+   - 推荐使用[SubConverter MetaCubeX](https://github.com/MetaCubeX/subconverter)改版
+2. 解压并打开`subconverter.exe`
+3. Clash/Mihomo订阅输入<http://127.0.0.1:25500/sub?target=%TARGET%&url=%URL%>
+   - `%TARGET%`替换为`auto`(自动)/`clash`(Clash)/`quanx`(Quantumult X)
+   - `%URL%`使用[URLEncode](https://www.urlencoder.org/)编码原订阅地址后替换
+
+### Sub Store
+1. 下载[Sub Store](https://github.com/sub-store-org/Sub-Store)
+2. 使用`pnpm i`安装 node 依赖项
+3. 使用`pnpm start`运行
 
 ## 连接方式
 ### HTTP/HTTPS:应用级TCP代理
