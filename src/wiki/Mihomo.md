@@ -1,6 +1,6 @@
 # Mihomo:代理工具核心
 ## 下载地址
-- [核心程序](https://github.com/MetaCubeX/mihomo)
+- [MihomoCore](https://github.com/MetaCubeX/mihomo)
 - [WindowsUI](https://github.com/clash-verge-rev/clash-verge-rev)
 - [AndroidUI](https://github.com/MetaCubeX/ClashMetaForAndroid)
 
@@ -25,11 +25,11 @@ services:
 ## 订阅转换
 ### SubConverter
 1. 下载[SubConverter](https://github.com/tindy2013/subconverter)
-   - 推荐使用[SubConverter MetaCubeX](https://github.com/MetaCubeX/subconverter)改版
+    - 推荐使用[SubConverter MetaCubeX](https://github.com/MetaCubeX/subconverter)改版
 2. 解压并打开`subconverter.exe`
 3. Clash/Mihomo订阅输入<http://127.0.0.1:25500/sub?target=%TARGET%&url=%URL%>
-   - `%TARGET%`替换为`auto`(自动)/`clash`(Clash)/`quanx`(Quantumult X)
-   - `%URL%`使用[URLEncode](https://www.urlencoder.org/)编码原订阅地址后替换
+    - `%TARGET%`替换为`auto`(自动)/`clash`(Clash)/`quanx`(Quantumult X)
+    - `%URL%`使用[URLEncode](https://www.urlencoder.org/)编码原订阅地址后替换
 
 ### Sub Store
 1. 下载[Sub Store](https://github.com/sub-store-org/Sub-Store)
@@ -126,17 +126,28 @@ ip6tables -t mangle -X CLASH6_LAN
 ```
 ### TUN:网卡模式(旁路网关)
 #### Linux
-- 宿主机运行Mihomo，或Docker成功启用privileged特权模式，系统会创建TUN网卡，自动识别出口网卡并拦截流量至Mihomo
+##### 直接启动
+- 宿主机运行Mihomo(系统会创建TUN网卡，自动识别出口网卡并拦截流量至Mihomo)
+##### 容器启动
+- Docker启用privileged特权模式(系统会创建TUN网卡，自动识别出口网卡并拦截流量至Mihomo)
 #### Windows
-- 临时启动
-  1. 以管理员权限运行Mihomo，系统会创建TUN网卡，自动代理本机所有流量
-- 计划任务自启动
-  1. 此电脑右键>管理>计划任务程序>创建任务
-  2. 常规：更改用户或组>输入SYSTEM>检查名称>确定
-  3. 常规：勾选使用最高权限运行
-  4. 触发器：新建>选择登录时
-  5. 操作：新建>程序或脚本选择`mihomo.exe`>添加参数`-d C:\Users\Admin\.config\mihomo`>确定
-  6. 保存任务即可
+##### 直接启动
+- 右键以管理员权限运行`mihomo.exe`(系统会创建TUN网卡，自动代理本机所有流量)
+##### 后台启动
+1. 在`mihomo.exe`程序所在目录创建`mihomo.vbs`输入指令保存
+    ```vbs
+    set ws=WScript.CreateObject("WScript.Shell")
+    ws.run "mihomo.exe",0
+    ```
+2. 双击运行或放入`C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`文件夹开机自动执行
+##### 创建计划任务
+- 自动创建:在`mihomo.exe`程序所在目录创建`mihomo.bat`输入指令保存并以使用管理员身份运行
+    ```shell
+    set "DIR=%~dp0"
+    set "DIR=%DIR:~0,-1%"
+    schtasks /create /tn "Mihomo" /tr "\"%~dp0mihomo.exe\" -d \"%DIR%\"" /sc onlogon /ru system /rl highest /f
+    ```
+- 手动创建和管理:右键单击开始菜单>计算机管理>计划任务程序>计划任务程序库
 
 ## 规则配置
 ### 规则仓库
