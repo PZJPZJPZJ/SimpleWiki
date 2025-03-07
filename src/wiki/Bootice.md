@@ -1,6 +1,24 @@
 # Bootice:启动引导编辑工具
 ## 下载地址
 - [Bootice](https://lon-01.dlo4d.com/files/bootice/BOOTICE_2016.06.17_v1.3.4.0.zip)
+
+## 提取启动文件
+1. 打开任意Windows`.iso`镜像
+2. 按照目录提取必要文件
+   - boot
+     - bcd
+     - boot.sdi
+   - efi
+     - boot
+       - bootia32.efi
+       - bootx64.efi
+     - microsoft
+       - boot
+         - bcd
+   - bootmgr
+   - bootmgr.efi
+3. 使用Bootice分别配置两个`bcd`文件
+
 ## 配置教程
 ### 物理磁盘
 #### 主引导记录MBR

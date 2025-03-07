@@ -105,6 +105,8 @@ irm https://get.activated.win | iex
 - [High Definition Audio](https://www.realtek.com/Download/List?cate_id=593&menu_id=298)
 ### Realtek网卡驱动
 - [Network Interface Controllers](https://www.realtek.com/Download/Index?cate_id=194&menu_id=368)
+### 驱动安装工具
+- [360驱动大师网卡版](https://www.lanzouu.com/iP2mQ1k0yrra)
 
 ## 运行库安装
 ### [Visual C++](https://learn.microsoft.com/zh-cn/cpp/windows/latest-supported-vc-redist?view=msvc-170)
