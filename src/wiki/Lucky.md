@@ -32,10 +32,12 @@ services:
 
 <script setup>
 import { ref, onMounted } from "vue";
-const queryParams = new URLSearchParams(window.location.search);
+
 const urlList = ref([]);
 
 const dnsResolve = async (name, type) => {
+  if (typeof window === 'undefined') return [];
+  
   const url = `https://dns.alidns.com/resolve?name=${name}&type=${type}`;
   try {
     const res = await fetch(url);
@@ -98,6 +100,9 @@ const srvDecode = (data) => {
 };
 
 onMounted(async () => {
+  if (typeof window === 'undefined') return;
+  
+  const queryParams = new URLSearchParams(window.location.search);
   const name = queryParams.get('name');
   const types = ['16', '28', '33'];
   let results = [];
@@ -105,15 +110,17 @@ onMounted(async () => {
     const res = await dnsResolve(name, t);
     results = results.concat(res);
   }
-  console.log(results)
+  console.log(results);
   urlList.value = results;
 });
 
 const redirectPage = (url) => {
-  window.open(url, '_blank');
+  if (typeof window !== 'undefined') {
+    window.open(url, '_blank');
+  }
 };
 </script>
-<style>
+<style scoped>
 .list-item {
   display: flex;
   align-items: center;
