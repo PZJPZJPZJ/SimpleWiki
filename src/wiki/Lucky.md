@@ -22,7 +22,7 @@ services:
 - [V2EX](https://www.v2ex.com/)
 
 ## 打洞端口重定向工具
-- 在当前URL后加入`?name=www.example.com`参数，`www.example.com`替换为有相应记录的域名，解析TXT、IP4P、SRV记录对应端口，结果列表点击即可跳转
+- [点击加入URL示例参数](?name=www.baidu.com)，参数可修改为有TXT、IP4P、SRV记录的域名，列表点击跳转解析的端口
 <div class="container">
 <div v-for="(item, index) in urlList" :key="index" class="list-item" @click="redirectPage(item.url)">
     <img class="favicon" :src="item.url + '/favicon.ico'">
@@ -101,7 +101,6 @@ const srvDecode = (data) => {
 
 onMounted(async () => {
   if (typeof window === 'undefined') return;
-  
   const queryParams = new URLSearchParams(window.location.search);
   const name = queryParams.get('name');
   const types = ['16', '28', '33'];
@@ -110,7 +109,6 @@ onMounted(async () => {
     const res = await dnsResolve(name, t);
     results = results.concat(res);
   }
-  console.log(results);
   urlList.value = results;
 });
 
