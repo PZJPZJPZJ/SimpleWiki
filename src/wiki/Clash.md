@@ -58,7 +58,7 @@ services:
 ### SubStore
 1. 下载[SubStore](https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store.bundle.js)
 2. 下载[Node.js](https://nodejs.org/dist/v18.20.7/node-v18.20.7-win-x64.zip)解压并配置环境变量
-3. 进入SubStore目录使用`npm sub-store.bundle.js`运行
+3. 进入SubStore目录使用`node sub-store.bundle.js`运行
 4. 访问<http://localhost:3000>管理订阅
 
 ## 连接方式
