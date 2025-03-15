@@ -55,10 +55,11 @@ services:
     - `%TARGET%`替换为`auto`(自动)/`clash`(Clash)/`quanx`(Quantumult X)
     - `%URL%`使用[URLEncode](https://www.urlencoder.org/)编码原订阅地址后替换
 
-### Sub Store
-1. 下载[Sub Store](https://github.com/sub-store-org/Sub-Store)
-2. 使用`pnpm i`安装 node 依赖项
-3. 使用`pnpm start`运行
+### SubStore
+1. 下载[SubStore](https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store.bundle.js)
+2. 下载[Node.js](https://nodejs.org/dist/v18.20.7/node-v18.20.7-win-x64.zip)解压并配置环境变量
+3. 进入SubStore目录使用`npm sub-store.bundle.js`运行
+4. 访问<http://localhost:3000>管理订阅
 
 ## 连接方式
 ### HTTP/HTTPS:应用级TCP代理
