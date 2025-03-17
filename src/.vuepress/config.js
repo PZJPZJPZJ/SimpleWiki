@@ -34,7 +34,7 @@ export default defineUserConfig({
       id: '5c290beb6394b23c840caaa8c38d8a60',
     }),
     catalogPlugin({
-      index: 3,
+      level: 3,
     }),
   ],
 })
