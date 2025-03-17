@@ -2,7 +2,7 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { catalogPlugin } from '@vuepress/plugin-catalog'
-import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics'
+import { baiduAnalyticsPlugin } from '@vuepress/plugin-baidu-analytics'
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -30,11 +30,11 @@ export default defineUserConfig({
   }),
   bundler: viteBundler(),
   plugins: [
-    googleAnalyticsPlugin({
-      id: 'G-GT116BPTRV',
+    baiduAnalyticsPlugin({
+      id: '5c290beb6394b23c840caaa8c38d8a60',
     }),
     catalogPlugin({
-
+      index: 3,
     }),
   ],
 })
