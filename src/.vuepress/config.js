@@ -31,7 +31,7 @@ export default defineUserConfig({
   bundler: viteBundler(),
   plugins: [
     googleAnalyticsPlugin({
-      id: 'G-SLRL0YQNHQ',
+      id: 'G-GT116BPTRV',
     }),
     catalogPlugin({
 
