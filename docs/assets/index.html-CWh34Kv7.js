@@ -1,0 +1,1 @@
+import{_ as t,c as a,g as o,o as n,h as c}from"./app-DkMC5jFW.js";const i={};function l(r,s){const e=c("Catalog");return n(),a("div",null,[o(e)])}const m=t(i,[["render",l],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/wiki/","title":"Wiki","lang":"zh-CN","frontmatter":{"title":"Wiki"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
