@@ -1,5 +1,5 @@
 # Clash:代理工具
-## 各平台客户端
+## 客户端
 ### Windows
 - [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)
 
@@ -12,9 +12,10 @@
 
 ### Android
 - [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)
+- [Hiddify](https://github.com/hiddify/hiddify-app)
 
 ### iOS
-- [Hiddify(开源免费多平台)](https://github.com/hiddify/hiddify-app)
+- [Hiddify](https://github.com/hiddify/hiddify-app)
 - [Shadowrocket](https://apps.apple.com/us/app/shadowrocket/id932747118)
 - [Quantumult X](https://apps.apple.com/us/app/quantumult-x/id1443988620)
 - [Stash](https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349)
@@ -25,26 +26,39 @@
 - [PassWall](https://github.com/xiaorouji/openwrt-passwall)
 
 ## 核心配置
-### 核心下载地址
+### 下载地址
 - [Mihomo(Clash Meta)](https://github.com/MetaCubeX/mihomo)
-- [Clash Premium](https://hub.docker.com/r/dreamacro/clash-premium)
-- [Clash Foss](https://hub.docker.com/r/dreamacro/clash)
-### Windows
-- 将[配置文件](#常用配置文件)命名为config.yaml，修改proxy-providers的url为订阅地址，放在`C:\Users\Admin\.config\mihomo`目录中,运行`mihomo.exe`
-### Linux
-- 将[配置文件](#常用配置文件)命名为config.yaml，修改proxy-providers的url为订阅地址，放在`/root/.config/mihomo`目录中,运行`./mihomo`
-### DockerCompose
 ```yaml
+# DockerCompose配置
 services:
   mihomo:
     container_name: mihomo
     image: metacubex/mihomo:latest
     network_mode: host
+    # privileged权限会创建Tun网卡代理全局(可选)
     privileged: true
     restart: always
     volumes:
       - ./config:/root/.config/mihomo
 ```
+- [Clash Premium](https://hub.docker.com/r/dreamacro/clash-premium)
+```yaml
+# DockerCompose配置
+services:
+  clash:
+    container_name: clash
+    image: dreamacro/clash-premium:latest
+    network_mode: host
+    restart: always
+    volumes:
+      - ./config:/root/.config/clash
+```
+
+### 配置教程
+1. 将[配置文件](#常用配置文件)命名为config.yaml，修改proxy-providers的url为订阅地址
+   - Windows放在`C:\Users\Admin\.config\mihomo`目录中
+   - Linux放在`/root/.config/mihomo`目录中
+2. 运行程序并选择其中一种[连接方式](#连接方式)
 
 ## 订阅转换
 ### SubConverter
@@ -151,20 +165,18 @@ ip6tables -t mangle -X CLASH6_LAN
 ```
 ### TUN:网卡模式(旁路网关)
 #### Linux
-##### 直接启动
-- 宿主机运行Mihomo(系统会创建TUN网卡，自动识别出口网卡并拦截流量至Mihomo)
-##### 容器启动
-- Docker启用privileged特权模式(系统会创建TUN网卡，自动识别出口网卡并拦截流量至Mihomo)
+- 使用`./mihomo`运行，系统会创建TUN网卡，自动识别出口网卡并拦截流量
+
 #### Windows
 ##### 直接启动
 - 右键以管理员权限运行`mihomo.exe`(系统会创建TUN网卡，自动代理本机所有流量)
 ##### 后台启动
-1. 在`mihomo.exe`程序所在目录创建`mihomo.vbs`输入指令保存
+1. 在`mihomo.exe`程序所在目录创建`mihomo.vbs`输入指令保存，右键`mihomo.exe`进入属性>兼容性>勾选以管理员身份运行此程序
     ```vbs
     set ws=WScript.CreateObject("WScript.Shell")
     ws.run "mihomo.exe",0
     ```
-2. 双击运行或放入`C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`文件夹开机自动执行
+2. 双击运行或创建快捷方式放入`C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp`文件夹开机自动执行
 ##### 创建计划任务
 - 自动创建:在`mihomo.exe`程序所在目录创建`mihomo.bat`输入指令保存并以使用管理员身份运行
     ```shell
