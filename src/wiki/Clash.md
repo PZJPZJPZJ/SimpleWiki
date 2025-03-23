@@ -2,6 +2,8 @@
 ## 客户端
 ### Windows
 - [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)
+  - [Win x64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.0/Clash.Verge_2.2.0_x64-setup.exe)
+  - [Win arm64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.0/Clash.Verge_2.2.0_arm64-setup.exe)
 
 ### Linux
 - [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)
@@ -12,10 +14,13 @@
 
 ### Android
 - [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)
+  - [Android Universal](https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.7/cmfa-2.11.7-meta-universal-release.apk)
 - [Hiddify](https://github.com/hiddify/hiddify-app)
+  - [Android Universal](https://github.com/hiddify/hiddify-next/releases/latest/download/Hiddify-Android-universal.apk)
 
 ### iOS
 - [Hiddify](https://github.com/hiddify/hiddify-app)
+  - [iOS Universal](https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532)
 - [Shadowrocket](https://apps.apple.com/us/app/shadowrocket/id932747118)
 - [Quantumult X](https://apps.apple.com/us/app/quantumult-x/id1443988620)
 - [Stash](https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349)
