@@ -20,5 +20,5 @@
   - [Takagen99源码](https://github.com/takagen99/Box)
 ## 接口地址
 - [饭太硬](https://www.饭太硬.com/tv)
-- [Pizazz](https://github.com/PizazzGY/Share)
-- [一木多线路](https://mirror.ghproxy.com/https://raw.githubusercontent.com/xianyuyimu/TVBOX-/main/TVBox/一木多线路.json)
+- [Pizazz在线](https://9877.kstore.space/AnotherD/api.json)
+- [Pizazz本地包](https://github.com/PizazzGY/Share)
