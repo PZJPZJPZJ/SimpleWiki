@@ -6,12 +6,12 @@ import { baiduAnalyticsPlugin } from '@vuepress/plugin-baidu-analytics'
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  title: 'PZJ',
-  description: 'A Simple Wiki Site',
+  title: 'Simple Wiki',
+  description: 'Tech Made Simple',
   base: '/SimpleWiki/',
   dest: 'docs/',
   theme: defaultTheme({
-    logo: 'https://avatars.githubusercontent.com/u/68857304',
+    logo: 'https://vuejs.press/images/hero.png',
     navbar: [
       {
         text: 'Home',

@@ -1,7 +1,7 @@
 {
-  "name": "simplewiki",
+  "name": "vuepress",
   "version": "0.0.1",
-  "description": "SimpleWiki",
+  "description": "PoweredByVuePress",
   "license": "MIT",
   "type": "module",
   "scripts": {

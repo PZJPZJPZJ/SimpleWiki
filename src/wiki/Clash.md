@@ -1,34 +1,33 @@
 # Clash:代理工具
 ## 客户端
-### Windows
-- [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)
-  - [Win x64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.0/Clash.Verge_2.2.0_x64-setup.exe)
-  - [Win arm64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.0/Clash.Verge_2.2.0_arm64-setup.exe)
+### [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)
+> 桌面端多平台
+- [Windows x64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_x64-setup.exe)
+- [Windows arm64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_arm64-setup.exe)
+- [macOS x64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_x64.dmg)
+- [macOS arm64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_aarch64.dmg)
+- [Linux x64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_amd64.deb)
+- [Linux arm64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_arm64.deb)
 
-### Linux
-- [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)
-- [ShellCrash](https://github.com/juewuy/ShellCrash)
+### [Hiddify](https://github.com/hiddify/hiddify-app)
+> 移动端多平台
+- [Android Universal](https://github.com/hiddify/hiddify-next/releases/latest/download/Hiddify-Android-universal.apk)
+- [iOS Universal](https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532)
 
-### macOS
-- [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)
-
-### Android
+### Android相关客户端
 - [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)
   - [Android Universal](https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.7/cmfa-2.11.7-meta-universal-release.apk)
-- [Hiddify](https://github.com/hiddify/hiddify-app)
-  - [Android Universal](https://github.com/hiddify/hiddify-next/releases/latest/download/Hiddify-Android-universal.apk)
 
-### iOS
-- [Hiddify](https://github.com/hiddify/hiddify-app)
-  - [iOS Universal](https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532)
+### iOS相关客户端
 - [Shadowrocket](https://apps.apple.com/us/app/shadowrocket/id932747118)
 - [Quantumult X](https://apps.apple.com/us/app/quantumult-x/id1443988620)
 - [Stash](https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349)
 - [Surge](https://apps.apple.com/us/app/surge-5/id1442620678)
 
-### OpenWRT
+### OpenWRT插件
 - [OpenClash](https://github.com/vernesong/OpenClash)
 - [PassWall](https://github.com/xiaorouji/openwrt-passwall)
+- [ShellCrash](https://github.com/juewuy/ShellCrash)
 
 ## 核心配置
 ### 下载地址
@@ -294,9 +293,15 @@ proxy-providers:
 proxy-groups:
   - name: 自动
     type: fallback
-    proxies: [香港,台湾,日本,韩国,美国,新加坡,DIRECT]
+    proxies: [香港,台湾,日本,韩国,美国,新加坡,专线,DIRECT]
     url: https://cp.cloudflare.com/generate_204
     interval: 60
+
+  - name: 专线
+    type: select
+    include-all: true
+    filter: "(?i)专线"
+    tolerance: 60
 
   - name: 香港
     type: url-test
@@ -343,6 +348,10 @@ proxy-groups:
 rules:
   # Lan
   - GEOIP,private,DIRECT,no-resolve
+  # AI
+  - GEOSITE,category-ai-chat-!cn,美国
+  # Bahamut
+  - GEOSITE,bahamut,台湾
   # Github
   - GEOSITE,github,自动
   # Twitter
@@ -358,10 +367,6 @@ rules:
   - GEOIP,netflix,自动
   # Spotify
   - GEOSITE,spotify,自动
-  # Bahamut
-  - GEOSITE,bahamut,台湾
-  # AI
-  - GEOSITE,category-ai-chat-!cn,美国
   # Telegram
   - GEOSITE,telegram,自动
   - GEOIP,telegram,自动
@@ -374,7 +379,7 @@ rules:
   # China
   - GEOSITE,CN,DIRECT
   - GEOIP,CN,DIRECT
-  # Others
+  # Global
   - MATCH,自动
 ```
 ## 配置文件示例
