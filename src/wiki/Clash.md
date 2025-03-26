@@ -1,7 +1,6 @@
 # Clash:代理工具
-## 客户端
+## 客户端推荐
 ### [Clash Verge Rev](https://github.com/clash-verge-rev/clash-verge-rev)
-> 桌面端多平台
 - [Windows x64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_x64-setup.exe)
 - [Windows arm64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_arm64-setup.exe)
 - [macOS x64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_x64.dmg)
@@ -9,14 +8,18 @@
 - [Linux x64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_amd64.deb)
 - [Linux arm64](https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.2.2/Clash.Verge_2.2.2_arm64.deb)
 
+### [FlClash](https://github.com/chen08209/FlClash)
+- [Android ARMv8](https://github.com/chen08209/FlClash/releases/download/v0.8.80/FlClash-0.8.80-android-arm64-v8a.apk)
+- [Android ARMv7](https://github.com/chen08209/FlClash/releases/download/v0.8.80/FlClash-0.8.80-android-armeabi-v7a.apk)
+- [Android x64](https://github.com/chen08209/FlClash/releases/download/v0.8.80/FlClash-0.8.80-android-armeabi-v7a.apk)
+
 ### [Hiddify](https://github.com/hiddify/hiddify-app)
-> 移动端多平台
 - [Android Universal](https://github.com/hiddify/hiddify-next/releases/latest/download/Hiddify-Android-universal.apk)
 - [iOS Universal](https://apps.apple.com/us/app/hiddify-proxy-vpn/id6596777532)
 
 ### Android相关客户端
 - [Clash Meta for Android](https://github.com/MetaCubeX/ClashMetaForAndroid)
-  - [Android Universal](https://github.com/MetaCubeX/ClashMetaForAndroid/releases/download/v2.11.7/cmfa-2.11.7-meta-universal-release.apk)
+- [Sing Box](https://github.com/SagerNet/sing-box)
 
 ### iOS相关客户端
 - [Shadowrocket](https://apps.apple.com/us/app/shadowrocket/id932747118)
@@ -24,10 +27,10 @@
 - [Stash](https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349)
 - [Surge](https://apps.apple.com/us/app/surge-5/id1442620678)
 
-### OpenWRT插件
+### OpenWRT相关插件
+- [ShellCrash](https://github.com/juewuy/ShellCrash)
 - [OpenClash](https://github.com/vernesong/OpenClash)
 - [PassWall](https://github.com/xiaorouji/openwrt-passwall)
-- [ShellCrash](https://github.com/juewuy/ShellCrash)
 
 ## 核心配置
 ### 下载地址
@@ -60,12 +63,13 @@ services:
 
 ### 配置教程
 1. 将[配置文件](#常用配置文件)命名为config.yaml，修改proxy-providers的url为订阅地址
-   - Windows放在`C:\Users\Admin\.config\mihomo`目录中
-   - Linux放在`/root/.config/mihomo`目录中
+    - Windows放在`C:\Users\Admin\.config\mihomo`目录中
+    - Linux放在`/root/.config/mihomo`目录中
 2. 运行程序并选择其中一种[连接方式](#连接方式)
 
 ## 订阅转换
-### SubConverter
+### 本地转换(推荐)
+#### SubConverter
 1. 下载[SubConverter](https://github.com/tindy2013/subconverter)
     - 推荐使用[SubConverter MetaCubeX](https://github.com/MetaCubeX/subconverter)改版
 2. 解压并打开`subconverter.exe`
@@ -73,11 +77,22 @@ services:
     - `%TARGET%`替换为`auto`(自动)/`clash`(Clash)/`quanx`(Quantumult X)
     - `%URL%`使用[URLEncode](https://www.urlencoder.org/)编码原订阅地址后替换
 
-### SubStore
+#### SubStore
 1. 下载[SubStore](https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store.bundle.js)
 2. 下载[Node.js](https://nodejs.org/dist/v18.20.7/node-v18.20.7-win-x64.zip)解压并配置环境变量
 3. 进入SubStore目录使用`node sub-store.bundle.js`运行
 4. 访问<http://localhost:3000>管理订阅
+
+### 在线转换(不推荐)
+- [SubConverters](https://subconverters.com/)
+- [ACL4SSR](https://acl4ssr-sub.github.io/)
+
+## 规则配置
+### 规则仓库
+- [BlackMatrix详细规则](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash)
+- [SSTap游戏规则](https://github.com/FQrabbit/SSTap-Rule/releases)
+- [GeoSite解析](https://github.com/v2fly/domain-list-community/tree/master/data)
+- [GeoIP解析](https://github.com/Loyalsoldier/geoip/tree/release/text)
 
 ## 连接方式
 ### HTTP/HTTPS:应用级TCP代理
@@ -189,13 +204,6 @@ ip6tables -t mangle -X CLASH6_LAN
     schtasks /create /tn "Mihomo" /tr "\"%~dp0mihomo.exe\" -d \"%DIR%\"" /sc onlogon /ru system /rl highest /f
     ```
 - 手动创建和管理:右键单击开始菜单>计算机管理>计划任务程序>计划任务程序库
-
-## 规则配置
-### 规则仓库
-- [BlackMatrix详细规则](https://github.com/blackmatrix7/ios_rule_script/tree/master/rule/Clash)
-- [SSTap游戏规则](https://github.com/FQrabbit/SSTap-Rule/releases)
-- [GeoSite解析](https://github.com/v2fly/domain-list-community/tree/master/data)
-- [GeoIP解析](https://github.com/Loyalsoldier/geoip/tree/release/text)
 
 ## 常用配置文件
 - [Mihomo Wiki](https://wiki.metacubex.one/)

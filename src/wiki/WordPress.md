@@ -38,11 +38,11 @@ services:
 - [麦出果免费资源](https://maichuguo.com/wordpress-plugins/)
 ### 常用插件
 #### Elementor(页面编辑)
-  - Unlimited Elements for Elementor(高度自定义组件)
-  - WP-Sweep(清理草稿)
-    - 当Elementor出现500报错时，常见为草稿过多。解决办法为进入Tool>Sweep点击清理Revisions
+- Unlimited Elements for Elementor(高度自定义组件)
+- WP-Sweep(清理草稿)
+  - 当Elementor出现500报错时，常见为草稿过多。解决办法为进入Tool>Sweep点击清理Revisions
 #### WooCommerce(上传商品)
-  - YITH WooCommerce Ajax Product Filter(商品分类筛选)
+- YITH WooCommerce Ajax Product Filter(商品分类筛选)
 #### YaostSEO(SEO优化)
 #### WPForms(第三方表单)
 #### WP File Manager(文件管理)
@@ -54,15 +54,14 @@ services:
 #### Converter for Media(图片格式转换)
 
 ## 网站分析
-### [Google Tag Manager](https://tagmanager.google.com/)
-
 ### [Google Analytics](https://analytics.google.com/)
-
-### [Google PageSpeed Insights](https://pagespeed.web.dev/)
-> 网页加载速度测试
+> 谷歌分析
 
 ### [Google Search Console](https://search.google.com/search-console/welcome)
 > 用于检测页面收录情况和优化站点健康状况
+
+### [Google PageSpeed Insights](https://pagespeed.web.dev/)
+> 网页加载速度测试
 
 ### [Google Search Status](https://status.search.google.com/)
 > 算法更新状态面版
@@ -70,26 +69,15 @@ services:
 ### [Google Ads](https://ads.google.com/)
 > 谷歌广告管理面版
 
+### [Google Tag Manager](https://tagmanager.google.com/)
+> 谷歌代码跟踪
+
 ### Semrush
-- 域名概览
-  - 查看自然流量数据。
-  - 关注SERP精选结果（识别流量变化的重点项目）。
-  - 分析主要自然搜索关键词，关注排名波动及竞争对手的关键词流量。
-- 发现关键词
-  - 关键词差异:输入竞对网站，筛选出竞对排名前20低KD的关键词进行铺设
-  - 域名概览:输入 `www.reddit.com/r/KeyWord` 进行关键词搜索，得到低竞争术语，使用CPC过滤器（设置为2美元），过滤掉低质量术语
-- 关键词概览
-  - 优化搜索量和竞争度（优先考虑KD 15%-29%的关键词）。
-  - 参考关键词建议，扩展内容范围。
-- 推荐工具
-  - [海外客](https://www.hiwaike.com/)
-  - [SEO Club](https://dash.seogroup.club/)
-  - [M123](https://www.m123.com)
+- [海外客](https://www.hiwaike.com/)
+- [SEO Club](https://dash.seogroup.club/)
+- [M123](https://www.m123.com)
 
 ## 搜索引擎优化技巧
 ### 相关教程
 - [Backlinko](https://backlinko.com)
 - [黑帽SEO论坛](https://www.blackhatworld.com)
-
-### Trustpilot网站评论
-- 淘宝:森摩尔网络
