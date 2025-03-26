@@ -1,4 +1,12 @@
 # MySQL:数据库服务端
+## 下载地址
+- [官网](https://dev.mysql.com/downloads/mysql/)
+  - [Windows x64](https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.4-winx64.zip)
+  - [macOS x64](https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.4-macos15-x86_64.tar.gz)
+  - [macOS arm64](https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.4-macos15-arm64.tar.gz)
+  - [Linux x64](https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.4-linux-glibc2.28-x86_64.tar.xz)
+  - [Linux arm64](https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.4-linux-glibc2.28-aarch64.tar.xz)
+
 ## 服务模式
 ```shell
 # 进入文件夹
