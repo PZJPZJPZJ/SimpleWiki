@@ -6,8 +6,9 @@
 - [1Panel](https://docker.1panel.live)
 
 ## Windows拉取镜像工具
-- [Python Docker Drag](https://github.com/NotGlop/docker-drag)
-- [Go Dpull](https://gitee.com/wocaa/dpull/releases)
+- [Docker Image Downloader](https://chromewebstore.google.com/detail/dfpojffmnkiglpjpjodlpmoejdcfobnd)
+- [Docker Drag](https://github.com/NotGlop/docker-drag)
+- [DPull](https://gitee.com/wocaa/dpull/releases)
 
 ## 安装步骤
 ```shell

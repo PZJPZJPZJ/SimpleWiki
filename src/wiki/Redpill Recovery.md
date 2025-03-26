@@ -1,16 +1,15 @@
 # Redpill Recovery:群晖系统引导
-## 下载地址
-- https://github.com/RROrg/rr
-
-## 使用方法
-1. 使用镜像工具将rr.img写入硬盘
-2. 启动系统并选择Configure loader
+## 安装教程
+1. 下载[RR Github](https://github.com/RROrg/rr)并使用镜像工具将rr.img写入硬盘
+2. 启动系统选择Configure loader
 3. 使用浏览器打开控制台提示配置地址
 4. 进入Choose a language选择zh_CN
 5. 进入解析pat手动上传系统或在线下载
 6. 进入编译引导
 7. 选择启动即可进入系统
-8. 进入系统安装网页选择pat进行系统安装
+8. 下载[DSM](https://archive.synology.cn/download/Os/DSM)
+   - 推荐[DSM_DS918+_69057.pat](https://global.synologydownload.com/download/DSM/release/7.2.1/69057-1/DSM_DS918%2B_69057.pat)
+9. 进入系统安装网页选择pat进行系统安装
 
 ## Docker群晖
 ### Docker Compose

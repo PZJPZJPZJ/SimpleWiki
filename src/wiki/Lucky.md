@@ -18,6 +18,7 @@ services:
 - [Natter](https://github.com/MikeWang000000/Natter)
 - [NATMap](https://github.com/heiher/natmap)
 - [N4](https://github.com/MikeWang000000/n4)
+- [DDNS Go](https://github.com/jeessy2/ddns-go)
 
 ## 相关论坛
 - [V2EX](https://www.v2ex.com/)
