@@ -1,0 +1,1 @@
+import{_ as t,e as a,k as o,l as n,o as l}from"./app-YqMerIX3.js";const i={};function c(r,s){const e=n("Catalog");return l(),a("div",null,[o(e)])}const m=t(i,[["render",c],["__file","index.html.vue"]]),p=JSON.parse('{"path":"/wiki/","title":"Wiki","lang":"zh-CN","frontmatter":{"title":"Wiki"},"headers":[],"git":{},"filePathRelative":null}');export{m as comp,p as data};
