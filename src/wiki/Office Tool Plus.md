@@ -26,3 +26,13 @@
       1. 许可证管理:展开许可证管理，点击安装许可证，推荐选择`Office Mondo 2016 - 批量许可证`，点击确定
       2. KMS管理:KMS主机推荐输入`kms.03k.org`，点击设置主机保存
       3. 上述步骤完成后点击许可证管理处的激活按钮等待完成激活
+
+## 历史版本
+### Office 2007
+- [Office 2007 ED2K](ed2k://|file|cn_office_professional_plus_2007_dvd_X12-38713.iso|694059008|CFAE350F8A9028110D12D61D9AEC1315|/)
+- 序列号:`DBXYD-TF477-46YM4-W74MH-6YDQ8`
+### Office 2010
+- [Office 2010 ED2K](ed2k://|file|cn_office_professional_plus_2010_x86_x64_dvd_515527.iso|1850281984|8CA2D23BCB767EDEE53C7F7455A60C72|/)
+- 序列号:`C6YV2-6CKK8-VF7JB-JJCFM-HXJ2D`
+### Office 365
+- [Office 365 ProPlus](https://officecdn.microsoft.com/sg/492350f6-3a01-4f97-b9c0-c7c6ddf67d60/media/zh-CN/O365ProPlusRetail.img)
