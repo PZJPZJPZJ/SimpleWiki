@@ -24,5 +24,7 @@
 - [CreativeCloudUninstaller](https://helpx.adobe.com/content/dam/help/en/creative-cloud/help/uninstall-creative-cloud-desktop-app/uninstaller_latest/creative_cloud_uninstallerwin.zip)
 - [CreativeCloudCleanerTool](https://swupmf.adobe.com/webfeed/CleanerTool/win/AdobeCreativeCloudCleanerTool.exe)
 
-## AdobeGenP破解
+## AdobeGenP破解工具
+- [Reddit](https://www.reddit.com/r/GenP/wiki/redditgenpguides/)
+  - [GenP 3.5.0 CGP](https://www.mediafire.com/file/1wdgln0hniyirgi/GenP.v3.5.0-CGP.zip/file)
 - [Github](https://github.com/wangzhenjjcn/AdobeGenp)

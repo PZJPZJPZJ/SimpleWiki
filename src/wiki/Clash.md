@@ -68,24 +68,21 @@ services:
 2. 运行程序并选择其中一种[连接方式](#连接方式)
 
 ## 订阅转换
-### 本地转换(推荐)
-#### SubConverter
+### SubConverter
 1. 下载[SubConverter](https://github.com/tindy2013/subconverter)
     - 推荐使用[SubConverter MetaCubeX](https://github.com/MetaCubeX/subconverter)改版
 2. 解压并打开`subconverter.exe`
-3. Clash/Mihomo订阅输入<http://127.0.0.1:25500/sub?target=%TARGET%&url=%URL%>
+3. 订阅地址输入本地URL<http://127.0.0.1:25500/sub?target=%TARGET%&url=%URL%>
     - `%TARGET%`替换为`auto`(自动)/`clash`(Clash)/`quanx`(Quantumult X)
     - `%URL%`使用[URLEncode](https://www.urlencoder.org/)编码原订阅地址后替换
+> 无法部署可使用[ACL4SSR](https://acl4ssr-sub.github.io/)或[SubConverters](https://subconverters.com/)进行在线转换(不推荐)
 
-#### SubStore
+### SubStore
 1. 下载[SubStore](https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store.bundle.js)
 2. 下载[Node.js](https://nodejs.org/dist/v18.20.7/node-v18.20.7-win-x64.zip)解压并配置环境变量
 3. 进入SubStore目录使用`node sub-store.bundle.js`运行
 4. 访问<http://localhost:3000>管理订阅
-
-### 在线转换(不推荐)
-- [SubConverters](https://subconverters.com/)
-- [ACL4SSR](https://acl4ssr-sub.github.io/)
+5. 新增订阅转换保存并复制对应客户端订阅地址
 
 ## 规则配置
 ### 规则仓库
