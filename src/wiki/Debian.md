@@ -1,9 +1,3 @@
 # Debian:稳定Linux发行版
-## 官方版本
-- [Debian](https://www.debian.org/download.html)
-## 分支版本
-- [ProxmoxVE](https://www.proxmox.com/downloads)
-- [TrueNAS](https://www.truenas.com/download-truenas-scale/)
-- [Kali](https://www.kali.org/get-kali)
-- [fnOS](https://www.fnnas.com/download)
-- [Ubuntu](https://ubuntu.com/download)
+## 下载地址
+- [官网](https://www.debian.org/download.html)
