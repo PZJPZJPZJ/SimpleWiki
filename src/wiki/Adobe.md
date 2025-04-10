@@ -1,24 +1,24 @@
 # Adobe:媒体处理软件
 ## AdobeGenP破解
 1. 访问[GenP Reddit](https://www.reddit.com/r/GenP/wiki/redditgenpguides/)或[Github](https://github.com/wangzhenjjcn/AdobeGenp)
-- 下载[GenP 3.5.0 CGP](https://www.mediafire.com/file/1wdgln0hniyirgi/GenP.v3.5.0-CGP.zip/file)破解工具
+   - 下载[GenP 3.5.0 CGP](https://www.mediafire.com/file/1wdgln0hniyirgi/GenP.v3.5.0-CGP.zip/file)破解工具
 2. 下载并安装[Adobe Creative Cloud](https://creativecloud.adobe.com/apps/download/creative-cloud)
-- 在安装期间登录需要Adobe帐户
-- 任何时间如果显示请勿安装Adobe正版服务(AGS)
+   - 在安装期间登录需要Adobe帐户
+   - 任何时间如果显示请勿安装Adobe正版服务(AGS)
 3. 使用GenP修补Creative Cloud
-- 以管理员身份运行GenP
-- 转到Options>打开Always search for ACC
-- 点击Search搜索Creative Cloud
-- 检查顶部的 ACC 的三个文件
-- 点击Patch运行破解
-- 每次更新Creative Cloud时，都必须再次使用GenP重新修补它
+   - 以管理员身份运行GenP
+   - 转到Options>打开Always search for ACC
+   - 点击Search搜索Creative Cloud
+   - 检查顶部的 ACC 的三个文件
+   - 点击Patch运行破解
+   - 每次更新Creative Cloud时，都必须再次使用GenP重新修补它
 4. 打开Creative Cloud>Apps安装需要的应用
 5. 在已安装的应用程序上运行GenP
-- 转到Options>关闭Always search for ACC
-- 点击Path选择应用程序所在目录
-- 点击Search搜索应用程序
-- 点击Patch运行破解
-- 每次更新应用程序时，必须使用GenP再次重新修补相应的应用程序
+   - 转到Options>关闭Always search for ACC
+   - 点击Path选择应用程序所在目录
+   - 点击Search搜索应用程序
+   - 点击Patch运行破解
+   - 每次更新应用程序时，必须使用GenP再次重新修补相应的应用程序
 
 ## 卸载清理工具
 - [CreativeCloudUninstaller](https://helpx.adobe.com/content/dam/help/en/creative-cloud/help/uninstall-creative-cloud-desktop-app/uninstaller_latest/creative_cloud_uninstallerwin.zip)
