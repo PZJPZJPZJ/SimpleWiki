@@ -10,6 +10,9 @@ export default defineUserConfig({
   description: 'Tech Made Simple',
   base: '/SimpleWiki/',
   dest: 'docs/',
+  head: [
+    ['script', { src: '/clarity.js', defer: true }]
+  ],
   theme: defaultTheme({
     logo: 'https://vuejs.press/images/hero.png',
     navbar: [
