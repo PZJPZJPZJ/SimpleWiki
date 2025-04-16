@@ -11,7 +11,7 @@ export default defineUserConfig({
   base: '/SimpleWiki/',
   dest: 'docs/',
   head: [
-    ['script', { src: '/clarity.js', defer: true }]
+    ['script', { src: '/SimpleWiki/clarity.js', defer: true }]
   ],
   theme: defaultTheme({
     logo: 'https://vuejs.press/images/hero.png',
