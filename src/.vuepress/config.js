@@ -18,7 +18,8 @@ export default defineUserConfig({
   base: '/SimpleWiki/',
   dest: 'docs/',
   head: [
-    ['script', { type: 'text/javascript' }, clarityScript]
+    ['script', { type: 'text/javascript' }, clarityScript],
+    ['link', { rel: 'icon', href: 'https://vuejs.press/images/hero.png' }]
   ],
   theme: defaultTheme({
     logo: 'https://vuejs.press/images/hero.png',
