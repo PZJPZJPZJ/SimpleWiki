@@ -18,7 +18,6 @@
     "sass-embedded": "^1.79.5"
   },
   "dependencies": {
-    "@vuepress/plugin-catalog": "^2.0.0-rc.85",
-    "@vuepress/plugin-baidu-analytics": "^2.0.0-rc.85"
+    "@vuepress/plugin-catalog": "^2.0.0-rc.85"
   }
 }

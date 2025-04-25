@@ -2,7 +2,6 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { catalogPlugin } from '@vuepress/plugin-catalog'
-import { baiduAnalyticsPlugin } from '@vuepress/plugin-baidu-analytics'
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -10,6 +9,9 @@ export default defineUserConfig({
   description: 'Tech Made Simple',
   base: '/SimpleWiki/',
   dest: 'docs/',
+  head: [
+    ['script', { src: '/SimpleWiki/clarity.js' }]
+  ],
   theme: defaultTheme({
     logo: 'https://vuejs.press/images/hero.png',
     navbar: [
@@ -30,9 +32,6 @@ export default defineUserConfig({
   }),
   bundler: viteBundler(),
   plugins: [
-    baiduAnalyticsPlugin({
-      id: '5c290beb6394b23c840caaa8c38d8a60',
-    }),
     catalogPlugin({
       level: 3,
     }),
