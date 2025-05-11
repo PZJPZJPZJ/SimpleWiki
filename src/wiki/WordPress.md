@@ -33,51 +33,30 @@ services:
       - WORDPRESS_DB_NAME=wordpress
 ```
 ## 插件
-### 破解网站
-- [喵容网付费资源](https://www.miaoroom.com/)
-- [麦出果免费资源](https://maichuguo.com/wordpress-plugins/)
-### 常用插件
-#### Elementor(页面编辑)
-- Unlimited Elements for Elementor(高度自定义组件)
-- WP-Sweep(清理草稿)
-  - 当Elementor出现500报错时，常见为草稿过多。解决办法为进入Tool>Sweep点击清理Revisions
-#### WooCommerce(上传商品)
+### [Elementor页面编辑](https://www.miaoroom.com/)
+- [Unlimited Elements for Elementor自定义组件](https://maichuguo.com/wordpress-plugins/)
+### WooCommerce(上传商品)
 - YITH WooCommerce Ajax Product Filter(商品分类筛选)
-#### YaostSEO(SEO优化)
-#### WPForms(第三方表单)
-#### WP File Manager(文件管理)
-#### WP Rocket(速度优化)
-#### Debloat(CSS 和字体优化)
-#### Hotjar(操作监控)
-#### GTranslate(多语言)
-#### Wordpress Pinterest Automatic(自动发布Pinterest)
-#### Converter for Media(图片格式转换)
+### YoastSEO(SEO优化)
+### WPForms(第三方表单)
+### WPRocket(速度优化)
+### GTranslate(多语言)
 
-## 网站分析
-### [Google Analytics](https://analytics.google.com/)
-> 谷歌分析
-
-### [Google Search Console](https://search.google.com/search-console/welcome)
-> 用于检测页面收录情况和优化站点健康状况
-
-### [Google PageSpeed Insights](https://pagespeed.web.dev/)
-> 网页加载速度测试
-
-### [Google Search Status](https://status.search.google.com/)
-> 算法更新状态面版
-
-### [Google Ads](https://ads.google.com/)
-> 谷歌广告管理面版
-
-### [Google Tag Manager](https://tagmanager.google.com/)
-> 谷歌代码跟踪
-
-### Semrush
+## 搜索引擎优化技巧
+### 网站分析
+- [Google Analytics谷歌分析](https://analytics.google.com/)
+- [Google Search Console谷歌网站控制台](https://search.google.com/search-console/welcome)
+- [Google PageSpeed Insights网站测速](https://pagespeed.web.dev/)
+- [Google Search Status谷歌更新面版](https://status.search.google.com/)
+- [Google Ads谷歌广告](https://ads.google.com/)
+- [Google Tag Manager谷歌代码跟踪](https://tagmanager.google.com/)
+- [Microsoft Clarity微软分析](https://clarity.microsoft.com/)
+- [Hotjar访客录制](https://www.hotjar.com/)
+### 相关教程
+- [Backlinko教程](https://backlinko.com)
+- [黑帽SEO论坛](https://www.blackhatworld.com)
+### 相关工具
+- [图片格式转换](https://github.com/renzhezhilu/webp2jpg-online)
 - [海外客](https://www.hiwaike.com/)
 - [SEO Club](https://dash.seogroup.club/)
 - [M123](https://www.m123.com)
-
-## 搜索引擎优化技巧
-### 相关教程
-- [Backlinko](https://backlinko.com)
-- [黑帽SEO论坛](https://www.blackhatworld.com)
