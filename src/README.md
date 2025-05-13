@@ -1,7 +1,7 @@
 ---
 home: true
 title: Home
-heroImage: https://vuejs.press/images/hero.png
+heroImage: /img/hero.png
 actions:
   - text: Wiki
     link: /wiki/

@@ -3,14 +3,6 @@ import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { catalogPlugin } from '@vuepress/plugin-catalog'
 
-const clarityScript = `
-(function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "r9rbwus6gb");
-`
-
 export default defineUserConfig({
   lang: 'zh-CN',
   title: 'Simple Wiki',
@@ -18,11 +10,12 @@ export default defineUserConfig({
   base: '/SimpleWiki/',
   dest: 'docs/',
   head: [
-    ['script', { type: 'text/javascript' }, clarityScript],
-    ['link', { rel: 'icon', href: 'https://vuejs.press/images/hero.png' }]
+    ['script', {src: '/SimpleWiki/js/glurBar.js', type: 'text/javascript' }],
+    ['script', {src: '/SimpleWiki/js/clarityRec.js', type: 'text/javascript' }],
+    ['link', { rel: 'icon', href: '/SimpleWiki/img/hero.png' }]
   ],
   theme: defaultTheme({
-    logo: 'https://vuejs.press/images/hero.png',
+    logo: '/img/hero.png',
     navbar: [
       {
         text: 'Home',
