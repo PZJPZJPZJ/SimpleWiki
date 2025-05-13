@@ -10,7 +10,6 @@ export default defineUserConfig({
   base: '/SimpleWiki/',
   dest: 'docs/',
   head: [
-    ['script', {src: '/SimpleWiki/js/glurBar.js', type: 'text/javascript',async: true }],
     ['script', {src: '/SimpleWiki/js/clarityRec.js', type: 'text/javascript' }],
     ['link', { rel: 'icon', href: '/SimpleWiki/img/hero.png' }]
   ],
