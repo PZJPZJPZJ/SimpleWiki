@@ -228,3 +228,10 @@ set-executionpolicy remotesigned
 # 恢复默认安全策略(选择Y确认)
 set-executionpolicy restricted
 ```
+### 关机时等待未响应程序
+```shell
+# 开启等待(默认)
+reg delete "HKEY_CURRENT_USER\Control Panel\Desktop" /v AutoEndTasks /f
+# 关闭等待
+reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v AutoEndTasks /t REG_DWORD /d 1 /f
+```
