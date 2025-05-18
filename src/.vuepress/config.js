@@ -5,7 +5,7 @@ import { catalogPlugin } from '@vuepress/plugin-catalog'
 
 export default defineUserConfig({
   lang: 'zh-CN',
-  title: 'Simple Wiki',
+  title: 'SimpleWiki',
   description: 'Tech Made Simple',
   base: '/SimpleWiki/',
   dest: 'docs/',
@@ -16,10 +16,6 @@ export default defineUserConfig({
   theme: defaultTheme({
     logo: '/img/hero.png',
     navbar: [
-      {
-        text: 'Home',
-        link: '/',
-      },
       {
         text: 'Wiki',
         link: '/wiki/',
