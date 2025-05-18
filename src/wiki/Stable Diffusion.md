@@ -1,12 +1,13 @@
 # Stable Diffusion:图像生成AI模型
-## 官方地址
-- [官网](https://stability.ai)
-- [GitHub](https://github.com/Stability-AI/StableDiffusion)
+## 下载地址
+- [StabilityAI官网](https://stability.ai)
+- [OneThingAI云部署平台](https://console.onethingai.com/)
 
 ## 安装教程
 ### WebUI(模块化)
-- [Stable Diffusion WebUI A1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
-- [Stable Diffusion WebUI Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge)
+- [StableDiffusion](https://github.com/Stability-AI/StableDiffusion)
+  - [Stable Diffusion WebUI A1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui)
+  - [Stable Diffusion WebUI Forge](https://github.com/lllyasviel/stable-diffusion-webui-forge)
 
 ### ComfyUI(工作流)
 1. 部署[Git](https://github.com/git-for-windows/git/releases)
@@ -76,9 +77,6 @@
 ### 基础知识
 入坑可以看[B站秋葉](https://space.bilibili.com/12566101)的视频，零基础推荐下载整合包使用。
 对原理大致了解可以从[基础工作流及模型介绍](https://www.cnblogs.com/joy99/p/18399471)了解核心原理。
-
-### 超分辨率指南
-
 
 ### Flux模型指南
 - [Flux.1 ComfyUI 对应模型安装及教程指南](https://comfyui-wiki.com/zh/tutorial/advanced/flux1-comfyui-guide-workflow-and-examples)
