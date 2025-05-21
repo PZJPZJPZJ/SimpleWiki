@@ -2,6 +2,7 @@ import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { viteBundler } from '@vuepress/bundler-vite'
 import { catalogPlugin } from '@vuepress/plugin-catalog'
+import path from 'path'
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -11,10 +12,10 @@ export default defineUserConfig({
   dest: 'docs/',
   head: [
     ['script', {src: '/SimpleWiki/js/clarityRec.js', type: 'text/javascript' }],
-    ['link', { rel: 'icon', href: '/SimpleWiki/img/hero.png' }]
+    ['link', { rel: 'icon', href: '/SimpleWiki/favicon.ico' }]
   ],
   theme: defaultTheme({
-    logo: '/img/hero.png',
+    logo: '/favicon.ico',
     navbar: [
       {
         text: 'Wiki',
@@ -27,6 +28,9 @@ export default defineUserConfig({
     ],
     sidebarDepth: 5,
   }),
+  alias: {
+    '@theme/VPNavbar.vue': path.resolve(__dirname,'./components/VPNavbar.vue'),
+  },
   bundler: viteBundler(),
   plugins: [
     catalogPlugin({
